@@ -36,12 +36,14 @@ function dlPage(elementId, ref, event, action) {
   pageLoadTime = new Date().getTime();
   // This event will trigger on page load
   window.addEventListener('load', function() {
+    pageReadyTime = new Date().getTime();
     dataLayer.push({
      'elementId': elementId,
      'ref': ref,
      'event': event,
      'action': action,
-     'process_start_time': pageLoadTime
+     'process_start_time': pageLoadTime,
+    'duration': (pageReadyTime-pageLoadTime)/1000
     });
   });
 }
@@ -56,7 +58,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.12 - with event_time with calc </p>
+ <p>V1.13 - with event_time with calc </p>
   
 <button class="register" id="reg-submit">Submit</button>
 <button class="register" id="reg-close">Close</button>
