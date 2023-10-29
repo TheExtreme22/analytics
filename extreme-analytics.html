@@ -31,7 +31,8 @@ function dlPage(elementId, ref, event, action) {
      'elementId': elementId,
      'ref': ref,
      'event': event,
-     'action': action
+     'action': action,
+     'event_time': new Date().getTime() 
     });
   });
 }
