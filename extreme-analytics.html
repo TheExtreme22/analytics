@@ -9,7 +9,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
 <!-- End Google Tag Manager -->
 <script>
- 
+
+// Variables to store the timestamps
+var pageLoadTime;
+
+
 function dlEvent(elementId, ref, event, action) {
   const element = document.getElementById(elementId);
   if (element) {
@@ -18,13 +22,15 @@ function dlEvent(elementId, ref, event, action) {
      'elementId': elementId,
      'ref': ref,
      'event': event,
-     'action': action
+     'action': action,
+     'event_time': pageLoadTime 
       });
     });
   }
 }
  
 function dlPage(elementId, ref, event, action) {
+  pageLoadTime = new Date().getTime();
   // This event will trigger on page load
   window.addEventListener('load', function() {
     dataLayer.push({
@@ -32,7 +38,7 @@ function dlPage(elementId, ref, event, action) {
      'ref': ref,
      'event': event,
      'action': action,
-     'event_time': new Date().getTime() 
+     'event_time': pageLoadTime
     });
   });
 }
@@ -47,7 +53,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.9 - with commmit </p>
+ <p>V1.10 - with event_time </p>
   
 <button class="register" id="reg-submit">Submit</button>
 <button class="register" id="reg-close">Close</button>
