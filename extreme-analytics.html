@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 var pageLoadTime;
 
 
-function dlEvent(elementId, ref, event, action) {
+function dlButton(elementId, ref, event, action) {
   
   const element = document.getElementById(elementId);
   if (element) {
@@ -31,6 +31,34 @@ function dlEvent(elementId, ref, event, action) {
     });
   }
 }
+
+function dlField(elementId, ref, event, action) {
+  const element = document.getElementById(elementId);
+
+  if (element) {
+    // Variable to track whether the input box has been focused
+    let hasBeenFocused = false;
+
+    element.addEventListener('focus', function() {
+      // Check if it's the first time the input box is focused
+      if (!hasBeenFocused) {
+        // Record the time when the input box is focused for the first time
+        const eventTime = new Date().getTime();
+        hasBeenFocused = true; // Mark as focused to prevent multiple recordings
+
+        dataLayer.push({
+          'elementId': elementId,
+          'ref': ref,
+          'event': event,
+          'action': action,
+          'process_start_time': pageLoadTime, 
+          'duration': (eventTime - pageLoadTime) / 1000
+        });
+      }
+    });
+  }
+}
+
  
 function dlPage(elementId, ref, event, action) {
   pageLoadTime = new Date().getTime();
