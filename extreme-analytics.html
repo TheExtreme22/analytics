@@ -15,6 +15,7 @@ var pageLoadTime;
 
 
 function dlEvent(elementId, ref, event, action) {
+  eventTime = new Date().getTime();
   const element = document.getElementById(elementId);
   if (element) {
     element.addEventListener('click', function() {
@@ -23,7 +24,8 @@ function dlEvent(elementId, ref, event, action) {
      'ref': ref,
      'event': event,
      'action': action,
-     'event_time': pageLoadTime 
+     'process_start_time': pageLoadTime, 
+     'duration': eventTime-pageLoadTime 
       });
     });
   }
@@ -38,7 +40,7 @@ function dlPage(elementId, ref, event, action) {
      'ref': ref,
      'event': event,
      'action': action,
-     'event_time': pageLoadTime
+     'process_start_time': pageLoadTime
     });
   });
 }
@@ -53,7 +55,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.10 - with event_time </p>
+ <p>V1.11 - with event_time with calc </p>
   
 <button class="register" id="reg-submit">Submit</button>
 <button class="register" id="reg-close">Close</button>
