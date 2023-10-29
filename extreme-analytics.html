@@ -8,7 +8,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
 <!-- End Google Tag Manager -->
-
+<script>
+ function dlEvent(elementId, event, action) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.addEventListener('click', function() {
+      dataLayer.push({
+        'event': event,
+        'ref': elementId,
+        'action': action
+      });
+    });
+  }
+}
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -23,5 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="register" id="click/03">Log In</button>
 <button class="register" id="click/04">Help</button>
 
+
+ 
 </body>
 </html>
