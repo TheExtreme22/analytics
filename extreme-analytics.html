@@ -21,6 +21,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   }
 }
+ 
+  function dlEvent(event, action) {
+  // This event will trigger on page load
+  window.addEventListener('load', function() {
+    dataLayer.push({
+     'event': 'register',
+     'ref': 'diplay/01'
+     'action': 'displayed'
+    });
+  });
+}
+
+ 
 </script>
 </head>
 <body>
@@ -29,7 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.4 - with JS </p>
+ <p>V1.5 - with reg page load </p>
   
 <button class="register" id="click/01">Submit</button>
 <button class="register" id="click/02">Close</button>
