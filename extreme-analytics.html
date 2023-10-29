@@ -26,7 +26,7 @@ function dlEvent(elementId, ref, event, action) {
      'event': event,
      'action': action,
      'process_start_time': pageLoadTime, 
-     'duration': eventTime-pageLoadTime 
+     'duration': (eventTime-pageLoadTime)/1000
       });
     });
   }
