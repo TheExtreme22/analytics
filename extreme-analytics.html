@@ -32,7 +32,7 @@ function dlButton(elementId, ref, event, action) {
   }
 }
 
-function dlField(elementId, ref, event, action) {
+function dlField(elementId, ref, event, action,category) {
   const element = document.getElementById(elementId);
   
   if (element) {
@@ -43,6 +43,7 @@ function dlField(elementId, ref, event, action) {
         'ref': ref,
         'event': event,
         'action': action,
+        'category':category,
         'process_start_time': pageLoadTime, 
         'duration': (eventTime - pageLoadTime) / 1000
       });
