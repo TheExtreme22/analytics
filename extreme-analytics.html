@@ -16,28 +16,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.2</p>
+ <p>V1.3 - No JS </p>
   
 <button class="register" id="click/01">Submit</button>
 <button class="register" id="click/02">Close</button>
 <button class="register" id="click/03">Log In</button>
 <button class="register" id="click/04">Help</button>
 
-<script>
-
-function dlEvent(elementId, event, action) {
-  const element = document.getElementById(elementId);
-  if (element) {
-    element.addEventListener('click', function() {
-      dataLayer.push({
-        'event': event,
-        'ref': elementId,
-        'action': action
-      });
-    });
-  }
-}
-
-</script>
 </body>
 </html>
