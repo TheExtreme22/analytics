@@ -22,17 +22,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
  
-  function dlEvent(event, action) {
+  function dlPage(elementId, event, action) {
   // This event will trigger on page load
   window.addEventListener('load', function() {
     dataLayer.push({
-     'event': 'register',
-     'ref': 'diplay/01'
-     'action': 'displayed'
+     'event': event,
+     'ref': elementId,
+     'action': action
     });
   });
 }
 
+dlPage('reg/01', 'register', 'displayed');
  
 </script>
 </head>
