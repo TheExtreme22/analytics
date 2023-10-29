@@ -24,7 +24,7 @@ function submitForm() {
     // You can add form submission logic here.
     // This is just a placeholder.
     // Simulate a successful form submission for demonstration purposes.
-    alert('Form submitted successfully!');
+    // alert('Form submitted successfully!');
 
     // Redirect to the confirmation page after submission.
     window.location.href = 'confirmation.html';
