@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html>
 <head>
 <!-- Google Tag Manager -->
@@ -10,31 +10,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <script>
  
-function dlEvent(elementId, event, action) {
+function dlEvent(elementId, ref, event, action) {
   const element = document.getElementById(elementId);
   if (element) {
     element.addEventListener('click', function() {
       dataLayer.push({
-        'event': event,
-        'ref': elementId,
-        'action': action
+     'elementId': elementId,
+     'ref': ref,
+     'event': event,
+     'action': action
       });
     });
   }
 }
  
-function dlPage(elementId, event, action) {
+function dlPage(elementId, ref, event, action) {
   // This event will trigger on page load
   window.addEventListener('load', function() {
     dataLayer.push({
+     'elementId': elementId,
+     'ref': ref,
      'event': event,
-     'ref': elementId,
      'action': action
     });
   });
 }
 
-dlPage('reg/01', 'register', 'displayed');
+dlPage('reg-displayed','reg/01', 'register', 'displayed');
  
 </script>
 </head>
@@ -46,12 +48,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <p>V1.7 - with reg page load </p>
   
-<button class="register" id="click/01">Submit</button>
-<button class="register" id="click/02">Close</button>
-<button class="register" id="click/03">Log In</button>
-<button class="register" id="click/04">Help</button>
-
-
+<button class="register" id="reg-submit">Submit</button>
+<button class="register" id="reg-close">Close</button>
+<button class="register" id="reg-login">Log In</button>
+<button class="register" id="reg-help">Help</button>
+<button class="register" id="reg-success">Success</button>
  
 </body>
 </html>
