@@ -15,10 +15,11 @@ var pageLoadTime;
 
 
 function dlEvent(elementId, ref, event, action) {
-  eventTime = new Date().getTime();
+  
   const element = document.getElementById(elementId);
   if (element) {
     element.addEventListener('click', function() {
+      eventTime = new Date().getTime();
       dataLayer.push({
      'elementId': elementId,
      'ref': ref,
