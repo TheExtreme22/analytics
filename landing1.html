@@ -17,13 +17,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 var pageLoadTime;
 dlPage('landing-displayed', 'landing/01', 'landing', 'displayed');
 
-var nodeData = jsonData["landing"]; // Assign "landing" data to a variable
-var payload = nodeData.find(function (item) {
-return "landing-displayed" in item;
+var landingData = jsonData["landing"]; // Assign "landing" data to a variable
+    
+    // Find "landing-displayed" in the JSON data
+    var regStep1Node = landingData.find(function (item) {
+        return "landing-displayed" in item;
     });
 
-// Display the result in an alert
-    alert(JSON.stringify(payload, null, 2));
+    // Display the result in an alert
+    alert(JSON.stringify(regStep1Node, null, 2));
     
 </script>
 
