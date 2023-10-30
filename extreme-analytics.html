@@ -42,7 +42,6 @@ function dlButton(elementId, ref, event, action) {
 
 function dlField(elementId, ref, event, category, object, action) {
   const element = document.getElementById(elementId);
-  gtm.dataLayer.reset();
   if (element) {
     element.addEventListener('focus', function() {
       const eventTime = new Date().getTime();
@@ -89,7 +88,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.22 - Clear DL function </p>
+ <p>V1.23 - Clear DL function </p>
 
 <h2>
   STEP 1
