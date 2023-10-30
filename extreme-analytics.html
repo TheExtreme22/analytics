@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 // Variables to store the timestamps
 var pageLoadTime;
-var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
+
 
 function dlButton(elementId, ref, event, action) {
   
@@ -20,6 +20,7 @@ function dlButton(elementId, ref, event, action) {
   if (element) {
     element.addEventListener('click', function() {
       eventTime = new Date().getTime();
+      var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
       gtm.dataLayer.reset();
       dataLayer.push({
      'elementId': elementId,
@@ -40,7 +41,8 @@ function dlField(elementId, ref, event, category, object, action) {
   if (element) {
     element.addEventListener('focus', function() {
       const eventTime = new Date().getTime();
-    
+    var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
+     gtm.dataLayer.reset();
       dataLayer.push({
         'elementId': elementId,
         'ref': ref,
@@ -61,6 +63,7 @@ function dlPage(elementId, ref, event, action) {
   // This event will trigger on page load
   window.addEventListener('load', function() {
     pageReadyTime = new Date().getTime();
+    var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
      gtm.dataLayer.reset();
     dataLayer.push({
      'elementId': elementId,
