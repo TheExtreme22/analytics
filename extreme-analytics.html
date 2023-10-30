@@ -20,6 +20,7 @@ function dlButton(elementId, ref, event, action) {
   if (element) {
     element.addEventListener('click', function() {
       eventTime = new Date().getTime();
+      dataLayer = [];
       dataLayer.push({
      'elementId': elementId,
      'ref': ref,
@@ -39,6 +40,7 @@ function dlField(elementId, ref, event, category, object, action) {
   if (element) {
     element.addEventListener('focus', function() {
       const eventTime = new Date().getTime();
+      dataLayer = [];
       dataLayer.push({
         'elementId': elementId,
         'ref': ref,
@@ -59,6 +61,7 @@ function dlPage(elementId, ref, event, action) {
   // This event will trigger on page load
   window.addEventListener('load', function() {
     pageReadyTime = new Date().getTime();
+    dataLayer = [];
     dataLayer.push({
      'elementId': elementId,
      'ref': ref,
@@ -80,7 +83,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.17 - with fields </p>
+ <p>V1.18 - Clear DL </p>
 
 <h2>
   STEP 1
