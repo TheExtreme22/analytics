@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Confirmation</title>
+    <title>Confirmation Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Thank you for your registration!</h1>
-    <p>Your registration has been successfully submitted.</p>
+    <div class="header">
+        <img class="logo" src="logo.png" alt="Extreme Betting Logo">
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-inner" style="width: 0;"></div>
+    </div>
+    <div class="form-container">
+        <form id="registration-form" action="submit_registration.php" method="post">
+            <div class="form-step active" id="step-1">
+                <h2>Registration Successful!</h2>
+                <p>Now take a look around or deposit to get your bonus.</p>
+                <button type="button" onclick="redirectToSite()">Look Around</button>
+                <button type="button" onclick="redirectToCashier()">Deposit Now</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a class="social-link" href="#">Facebook</a>
+            <a class="social-link" href="#">Twitter</a>
+            <a class="social-link" href="#">Instagram</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
