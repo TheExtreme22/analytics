@@ -3,6 +3,21 @@
 <head>
     <title>Registration Form</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
+<!-- End Google Tag Manager -->
+<script src="tracking.js"></script>
+<script>
+var pageLoadTime;
+dlPage('reg-displayed', 'reg/01', 'register', 'displayed');
+</script>
+
+    
 </head>
 <body>
     <div class="header">
@@ -16,10 +31,10 @@
             <div class="form-step active" id="step-1">
                 <h2>Step 1: Account Information</h2>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="reg-email" name="email" required>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="reg-password" name="password" required>
 
                 <button type="button" onclick="nextStep(1)">Next</button>
             </div>
@@ -27,13 +42,13 @@
             <div class="form-step" id="step-2">
                 <h2>Step 2: Personal Information</h2>
                 <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" required>
+                <input type="text" id="reg-first-name" name="first-name" required>
 
                 <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" required>
+                <input type="text" id="reg-last-name" name="last-name" required>
 
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
+                <input type="date" id="reg-dob" name="dob" required>
 
                 <button type="button" onclick="prevStep(2)">Back</button>
                 <button type="button" onclick="nextStep(2)">Next</button>
@@ -42,10 +57,10 @@
             <div class="form-step" id="step-3">
                 <h2>Step 3: Address Information</h2>
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="reg-address" name="address" required>
 
                 <button type="button" onclick="prevStep(3)">Back</button>
-                <button type="button" onclick="submitForm()">Submit</button>
+                <button id="reg-submit" type="button" onclick="submitForm()">Submit</button>
             </div>
         </form>
     </div>
