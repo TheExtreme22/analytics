@@ -30,15 +30,21 @@ function submitForm() {
     window.location.href = 'confirmation.html';
 }
 
-  
-        function redirectToRegistration() {
-            // Get the current query string
-            var queryString = window.location.search;
+function redirectToRegistration() {
+    var queryString = window.location.search;
+    var registrationPageURL = "register.html" + queryString;
+    window.location.href = registrationPageURL;
+}
 
-            // Construct the registration page URL with the query string
-            var registrationPageURL = "register.html" + queryString;
+function redirectToSite() {
+    var queryString = window.location.search;
+    var destinationPageURL = "site.html" + queryString;
+    window.location.href = destinationPageURL;
+}
 
-            // Redirect to the registration page with the query string
-            window.location.href = registrationPageURL;
-        }
+function redirectToCashier() {
+    var queryString = window.location.search;
+    var destinationPageURL = "cashier.html" + queryString;
+    window.location.href = destinationPageURL;
+}
    
