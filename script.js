@@ -30,7 +30,15 @@ function submitForm() {
     window.location.href = 'confirmation.html';
 }
 
-function redirectToRegistration() {
-    // JavaScript function to redirect to the registration page
-    window.location.href = "register.html";
-}
+  
+        function redirectToRegistration() {
+            // Get the current query string
+            var queryString = window.location.search;
+
+            // Construct the registration page URL with the query string
+            var registrationPageURL = "register.html" + queryString;
+
+            // Redirect to the registration page with the query string
+            window.location.href = registrationPageURL;
+        }
+   
