@@ -16,9 +16,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 var pageLoadTime;
 dlPage('landing-displayed', 'landing/01', 'landing', 'displayed');
 
+// Find "reg-step-1" in the JSON data
+var regStep1Node = jsonData.register.find(function (item) {
+return "reg-step-1" in item;
+});
 
-var regStep1Node = jsonData.register.find(item => "reg-step-1" in item);
-alert(regStep1Node);
+// Display the result in an alert
+    alert(JSON.stringify(regStep1Node, null, 2));
     
 </script>
 
