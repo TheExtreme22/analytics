@@ -46,22 +46,11 @@ function dlField(elementId, ref, event, category, object, action) {
 }
 
  
-function dlPage(elementId, ref, event, action) {
+function dlPagePayload(payload) {
   pageLoadTime = new Date().getTime();
-  // This event will trigger on page load
   window.addEventListener('load', function() {
     pageReadyTime = new Date().getTime();
      resetDataLayer();
-     dataLayer.push({
-     'elementId': elementId,
-     'ref': ref,
-     'event': event,
-     'action': action,
-     'process_start_time': pageLoadTime,
-    'duration': (pageReadyTime-pageLoadTime)/1000
-    });
+     dataLayer.push(payload);
   });
 }
-
-
- 
