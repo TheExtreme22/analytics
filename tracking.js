@@ -6,7 +6,6 @@ function resetDataLayer() {
   window.dataLayer.length = 0;
 }
 
-
 function dlButton(elementId, ref, event, action) {
   const element = document.getElementById(elementId);
   if (element) {
