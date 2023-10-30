@@ -18,7 +18,7 @@ var pageLoadTime;
 dlPage('landing-displayed', 'landing/01', 'landing', 'displayed');
 
 // Find "reg-step-1" in the JSON data
-var regStep1Node = jsonData.register.find(function (item) {
+var regStep1Node = jsonData.landing.find(function (item) {
 return "landing-displayed" in item;
 });
 
