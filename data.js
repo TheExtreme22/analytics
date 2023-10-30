@@ -176,7 +176,9 @@ var jsonData =
 				"name":"landing",
 				"action":"displayed",
 				"affiliate_id":"{qs.affiliate_id}",
-				"item_id":"{qs.promo}"
+				"item_id":"{qs.promo}",
+				"process_start_time":"{process_start_time}",
+				"duration":"{duration}",
 		    }
 		},
 		{"land-2-displayed": 
