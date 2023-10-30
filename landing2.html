@@ -3,6 +3,21 @@
 <head>
     <title>Landing Page 2</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
+<!-- End Google Tag Manager -->
+<script src="tracking.js"></script>
+<script>
+var pageLoadTime;
+dlPage('landing-displayed', 'landing/02', 'landing', 'displayed');
+</script>
+
+    
 </head>
 <body>
     <div class="header">
@@ -16,7 +31,7 @@
             <div class="form-step active" id="step-1">
                 <h2>Free Spins:</h2>
                 <p>Spin the reels and win with our free spins promotion. Try your luck now!</p>
-                <button type="button" onclick="redirectToRegistration()">Register</button>
+                <button type="button" id="landing2-register" onclick="redirectToRegistration()">Register</button>
             </div>
 
         </form>
