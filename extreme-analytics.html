@@ -13,15 +13,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 // Variables to store the timestamps
 var pageLoadTime;
 
-  // Common function to reset the dataLayer
+// Common function to reset the dataLayer
 function resetDataLayer() {
-  var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
-  gtm.dataLayer.reset();
+  // var gtm = window.google_tag_manager['GTM-M2RNBSN8'];
+  // gtm.dataLayer.reset();
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.length = 0;
 }
 
 
 function dlButton(elementId, ref, event, action) {
-  
   const element = document.getElementById(elementId);
   if (element) {
     element.addEventListener('click', function() {
@@ -40,7 +41,6 @@ function dlButton(elementId, ref, event, action) {
 }
 
 function dlField(elementId, ref, event, category, object, action) {
-
   const element = document.getElementById(elementId);
   gtm.dataLayer.reset();
   if (element) {
@@ -89,7 +89,7 @@ function dlPage(elementId, ref, event, action) {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
- <p>V1.21 - Clear DL function </p>
+ <p>V1.22 - Clear DL function </p>
 
 <h2>
   STEP 1
