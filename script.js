@@ -29,3 +29,8 @@ function submitForm() {
     // Redirect to the confirmation page after submission.
     window.location.href = 'confirmation.html';
 }
+
+function redirectToRegistration() {
+    // JavaScript function to redirect to the registration page
+    window.location.href = "register.html";
+}
