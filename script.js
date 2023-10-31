@@ -27,7 +27,9 @@ function submitForm() {
     // alert('Form submitted successfully!');
 
     // Redirect to the confirmation page after submission.
-    window.location.href = 'confirmation.html';
+     var queryString = window.location.search;
+    var destinationPageURL = "confirmation.html" + queryString;
+    window.location.href = destinationPageURL;
 }
 
 function redirectToRegistration() {
