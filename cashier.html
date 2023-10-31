@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Cashier Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
+<!-- End Google Tag Manager -->
+<script src="tracking.js"></script>
+    
+<script>
+var pageLoadTime=new Date().getTime();
+var pageType='cashier';    
+var pageName='deposit';  
+</script>
+
+
+    
+    <title>CCashier - Deposit</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="logo.png" alt="Extreme Betting Logo">
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-inner" style="width: 0;"></div>
+    </div>
+    <div class="form-container">
+        <form id="cashier-deposit--form" action="submit_registration.php" method="post">
+            <div class="form-step active" id="confirmation">
+                <h2>DEPOSIT</h2>
+                <p>Deposit now, using the buttons below</p>
+                <button id='button.deposit.£10' type="button" onclick="redirectToSite()">£10</button>
+                <button id='button.deposit.£50' type="button" onclick="redirectToSite()">£50</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a id="link.facebook" class="social-link" href="#">Facebook</a>
+            <a id="link.twitter" class="social-link" href="#">Twitter</a>
+            <a id="link.instagram" class="social-link" href="#">Instagram</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  
+
+</body>
+</html>
