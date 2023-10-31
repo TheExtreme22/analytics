@@ -36,7 +36,7 @@ dlPage('reg-displayed', 'reg/01', 'register', 'displayed');
                 <label for="password">Password:</label>
                 <input type="password" id="reg-password" name="password" required>
 
-                <button type="button" onclick="nextStep(1)">Next</button>
+                <button id="registration.button.step_1-next" type="button" onclick="nextStep(1)">Next</button>
             </div>
 
             <div class="form-step" id="step-2">
@@ -50,8 +50,8 @@ dlPage('reg-displayed', 'reg/01', 'register', 'displayed');
                 <label for="dob">Date of Birth:</label>
                 <input type="date" id="reg-dob" name="dob" required>
 
-                <button type="button" onclick="prevStep(2)">Back</button>
-                <button type="button" onclick="nextStep(2)">Next</button>
+                <button id="registration.button.step_2-back" type="button" onclick="prevStep(2)">Back</button>
+                <button id="registration.button.step_2-next" type="button" onclick="nextStep(2)">Next</button>
             </div>
 
             <div class="form-step" id="step-3">
@@ -59,8 +59,8 @@ dlPage('reg-displayed', 'reg/01', 'register', 'displayed');
                 <label for="address">Address:</label>
                 <input type="text" id="reg-address" name="address" required>
 
-                <button type="button" onclick="prevStep(3)">Back</button>
-                <button id="reg-submit" type="button" onclick="submitForm()">Submit</button>
+                <button id="registration.button.step_3-back" type="button" onclick="prevStep(3)">Back</button>
+                <button id="registration.button.submit" type="button" onclick="submitForm()">Submit</button>
             </div>
         </form>
     </div>
