@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+   <title>Confirmation Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2RNBSN8');</script>
+<!-- End Google Tag Manager -->
+<script src="tracking.js"></script>
+    
+<script>
+var pageLoadTime=new Date().getTime();
+var pageType='registration';    
+var pageName='confirmation';  
+</script>
+
+
+    
     <title>Confirmation Form</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -12,12 +33,12 @@
         <div class="progress-bar-inner" style="width: 0;"></div>
     </div>
     <div class="form-container">
-        <form id="registration-form" action="submit_registration.php" method="post">
-            <div class="form-step active" id="step-1">
+        <form id="confirmation-form" action="submit_registration.php" method="post">
+            <div class="form-step active" id="confirmation">
                 <h2>Registration Successful!</h2>
                 <p>Now take a look around or deposit to get your bonus.</p>
-                <button type="button" onclick="redirectToSite()">Look Around</button>
-                <button type="button" onclick="redirectToCashier()">Deposit Now</button>
+                <button id='button.site' type="button" onclick="redirectToSite()">Look Around</button>
+                <button id='button.deposit' type="button" onclick="redirectToCashier()">Deposit Now</button>
             </div>
 
         </form>
@@ -25,14 +46,14 @@
 
     <div class="footer">
         <div class="social-links">
-            <a class="social-link" href="#">Facebook</a>
-            <a class="social-link" href="#">Twitter</a>
-            <a class="social-link" href="#">Instagram</a>
+            <a id="link.facebook" class="social-link" href="#">Facebook</a>
+            <a id="link.twitter" class="social-link" href="#">Twitter</a>
+            <a id="link.instagram" class="social-link" href="#">Instagram</a>
         </div>
     </div>
 
     <script src="script.js"></script>
-    <script src="tracking.js"></script>
+  
 
 </body>
 </html>
