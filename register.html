@@ -18,7 +18,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 var pageLoadTime=new Date().getTime();
 var pageType='registration';    
 var pageName='standard';  
-removeIdOnFocus();
 </script>
 
 
@@ -82,4 +81,23 @@ removeIdOnFocus();
    
   
 </body>
+<script>
+    function removeIdOnFocus() {
+  // Get all input fields
+  var inputFields = document.querySelectorAll("input");
+
+  // Attach the focus event listener to each input field
+  inputFields.forEach(function(input) {
+    input.addEventListener("focus", function() {
+      this.removeAttribute("id");
+      alert('removed');
+    });
+  });
+}
+
+// Call the function to set up the event listeners
+removeIdOnFocus();
+</script>
+
+    
 </html>
