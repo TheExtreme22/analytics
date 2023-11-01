@@ -19,6 +19,24 @@ var pageLoadTime=new Date().getTime();
 var pageType='registration';    
 var pageName='standard';  
 </script>
+
+<script>
+function removeIdOnFocus() {
+  // Get all input fields
+  var inputFields = document.querySelectorAll("input");
+
+  // Attach the focus event listener to each input field
+  inputFields.forEach(function(input) {
+    input.addEventListener("focus", function() {
+      this.removeAttribute("id");
+    });
+  });
+}
+
+// Call the function to set up the event listeners
+removeIdOnFocus();
+</script>
+    
     
 </head>
 <body>
