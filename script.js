@@ -53,7 +53,7 @@ function redirectToCashier() {
 function removeIdOnFocus() {
   // Get all input fields
   var inputFields = document.querySelectorAll("input");
-
+ alert('here');
   // Attach the focus event listener to each input field
   inputFields.forEach(function(input) {
     input.addEventListener("focus", function() {
