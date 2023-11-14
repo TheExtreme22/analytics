@@ -9,7 +9,7 @@
 
       // Add a delay of 1 second (you can adjust the delay as needed)
       setTimeout(function() {
-        elementWithId.removeAttribute("gtm");
+        elementWithId.removeAttribute("gtm");alert('here');
       }, 500); // 1000 milliseconds = 1 second
     });
   });
