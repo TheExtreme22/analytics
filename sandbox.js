@@ -9,23 +9,20 @@ function updateGTMOnFocus() {
     input.addEventListener("focus", function() {
       var elementWithId = this; // Store the element that received focus
 
-      // Get the current value of the 'gtm' attribute
-      var gtmValue = elementWithId.getAttribute('gtm');
-
-      // If 'gtm' attribute exists, increase 'count' by 1 and update 'gtm' attribute
-      if (gtmValue !== null) {
-        var count = parseInt(elementWithId.getAttribute('count')) || 0;
-        count++;
+      // Check if 'count' attribute exists
+      var countValue = elementWithId.getAttribute('count');
+      
+      // If 'count' attribute exists, increase its value by 1
+      if (countValue !== null) {
+        var count = parseInt(countValue) + 1;
         elementWithId.setAttribute('count', count);
       } else {
-        // If 'gtm' attribute doesn't exist, create it and set 'count' to 1
-        elementWithId.setAttribute('gtm', 'example');
+        // If 'count' attribute doesn't exist, create it and set its value to 1
         elementWithId.setAttribute('count', 1);
       }
     });
   });
 }
-
 
 
 // Call the function to set up the event listeners after the DOM is loaded
