@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Sandbox Site</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K3LNQ37V');</script>
+<!-- End Google Tag Manager -->
+<script src="tracking.js"></script>
+    
+<script>
+var pageLoadTime=new Date().getTime();
+var pageType='sandbox';    
+var pageName='lobby';  
+</script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            background-color: #6869df; /* Light Purple */
+            color: #fff;
+            width: 200px;
+            padding: 20px;
+            position: fixed;
+        }
+      nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            background-color: #c5b6df; /* Green */
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px; /* Rounded corners */
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #000000; /* Darker green on hover */
+        }
+        main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .swim-lane {
+            margin-bottom: 30px;
+            padding: 10px; /* Added padding */
+        }
+        .swim-lane-title {
+            font-weight: bold;
+        }
+        .game-tile {
+            display: inline-block;
+            width: 210px;
+            margin-right: 10px;
+        }
+
+       .game-tile img {
+            width: 200px; /* Set image width to 100px */
+            height: 150px; /* Set image height to 50px */
+        }
+       
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="logo.png" alt="Extreme Betting Logo">
+    </div>
+    
+  
+        <nav>
+        <ul>
+            <li><a data-gtm="link.main.home" href="#">Sandbox</a></li>
+            <li><a data-gtm="link.main.slots" href="#">Slots</a></li>
+            <li><a  data-gtm="link.main.live_casino" href="#">Live Casino</a></li>
+            <li><a data-gtm="link.main.promotions" href="#">Promotions</a></li>
+        </br>
+           <li><a data-gtm="link.main.deposit" href="javascript:void(0);" onclick="redirectToCashier()">Deposit</a></li>
+           
+        </ul>
+    </nav>
+    <main>
+        <div class="swim-lane">
+            <h2 class="swim-lane-title">Top Games</h2>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.eye_of_horus" href="#">
+                <img src="game1.jpg" alt="Game 1">
+                </a>
+            </div>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.fishing_frenzy" href="#">
+                <img  src="game2.jpg" alt="Game 2">
+               </a>
+            </div>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.gold_cash" href="#">
+                <img src="game3.jpg" alt="Game 3">
+               </a>
+            </div>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.big_bass_splash" href="#">
+                <img src="game4.jpg" alt="Game 4">
+               </a>
+            </div>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.roulette" href="#">
+                <img src="game5.jpg" alt="Game 5">
+               </a>
+            </div>
+            <div class="game-tile">
+                <a data-gtm="link.top_games.starburst" href="#">
+                <img src="game6.jpg" alt="Game 6">
+               </a>
+            </div>
+        </div>
+
+        <div class="swim-lane">
+            <h2 class="swim-lane-title">New Games</h2>
+            <div class="game-tile">
+                <a data-gtm="link.new_games.big_bass_halloween" href="#">
+                <img  " src="game7.jpg" alt="Game 7">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.new_games.eternal_wishes" href="#">
+                <img src="game8.jpg" alt="Game 8">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.new_games.full_moon_fever" href="#">
+                <img   src="game9.jpg" alt="Game 9">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.new_games.gold_fish" href="#">
+                <img   src="game10.jpg" alt="Game 10">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.new_games.big_spin_bonus" href="#">
+                <img   src="game11.jpg" alt="Game 11">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.new_games.massive_gold" href="#">
+                <img   src="game12.jpg" alt="Game 12">
+               </a>
+            </div>
+        </div>
+
+        <div class="swim-lane">
+            <h2 class="swim-lane-title">Featured</h2>
+          <div class="game-tile">
+             <a data-gtm="link.featured_games.massive_gold" href="#">
+                <img  src="game12.jpg" alt="Game 12">
+             </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.featured_games.gold_cash" href="#">
+                <img  src="game3.jpg" alt="Game 3">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.featured_games.starburst" href="#">
+                <img  src="game6.jpg" alt="Game 6">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.featured_games.fishing_frenzy" href="#">
+                <img  src="game2.jpg" alt="Game 2">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.featured_games.full_moon_fever" href="#">
+                <img  src="game9.jpg" alt="Game 0">
+               </a>
+            </div>
+            <div class="game-tile">
+               <a data-gtm="link.featured_games.big_bass_halloween" href="#">
+                <img " src="game7.jpg" alt="Game 7">
+               </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="social-links">
+            <a data-gtm="link.facebook" class="social-link" href="#">Facebook</a>
+            <a data-gtm="link.twitter" class="social-link" href="#">Twitter</a>
+            <a data-gtm="link.instagram" class="social-link" href="#">Instagram</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  
+
+</body>
+</html>
