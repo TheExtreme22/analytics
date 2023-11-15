@@ -3,21 +3,18 @@
 <head>
     <title>Sandbox - Playground</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K3LNQ37V');</script>
+    <!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K3LNQ37V');</script>
-<!-- End Google Tag Manager -->
-    
-<script>
-var pageType='sandbox';    
-var pageName='playground';
-</script>
-
-    
+    <script>
+    var pageType='sandbox';    
+    var pageName='playground';
+    </script>
 </head>
 <body>
     <div class="header">
@@ -30,12 +27,21 @@ var pageName='playground';
                 <label for="email">Email:</label>
                 <input type="email" data-gtm="step_1.field.email.start" name="email" required>
                 <label for="password">Password:</label>
-                <input type="password" data-gtm="step_1.field.password.start"  name="password" required>
-                <a href="https://theextreme22.github.io/betting/sandbox-site.html">
-                <button data-gtm="button.submit" type="button" >Submit</button>
-                </a>
+                <input type="password" data-gtm="step_1.field.password.start" name="password" required>
+                <!-- Close button added here -->
+                <button type="button" data-gtm="exit_prompt.displyed" onclick="showConfirmationPopup()">Close</button>
+                <button data-gtm="button.submit" type="submit">Submit</button>
             </div>
         </form>
+    </div>
+
+    <!-- Popup Overlay HTML -->
+    <div id="confirmationPopup" class="popup-overlay" style="display:none;">
+        <div class="popup-content">
+            <p>Are you sure you want to close?</p>
+            <button data-gtm="exit_prompt.exit" onclick="confirmRedirect()">Yes, close</button>
+            <button data-gtm="exit_prompt.back" onclick="cancelRedirect()">No, go back</button>
+        </div>
     </div>
 
     <div class="footer">
@@ -47,6 +53,19 @@ var pageName='playground';
     </div>
 
     <script src="sandbox.js"></script>
-    
+    <script>
+        function showConfirmationPopup() {
+            document.getElementById('confirmationPopup').style.display = 'block'; // Show the popup
+        }
+
+        function confirmRedirect() {
+            document.getElementById('confirmationPopup').style.display = 'none'; // Hide the popup
+            // Handle the close action here. For example, you might want to clear the form or navigate to another page.
+        }
+
+        function cancelRedirect() {
+            document.getElementById('confirmationPopup').style.display = 'none'; // Hide the popup
+        }
+    </script>
 </body>
 </html>
