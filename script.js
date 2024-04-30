@@ -167,7 +167,7 @@ function trackButtonClick(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
-        var trackCampaign = target.getAttribute('data-track-campaign') || '';
+      
     
 
         // Construct event properties object
@@ -176,11 +176,12 @@ function trackButtonClick(event) {
             Container: trackContainer,
             Object: trackObject,
             Category: trackCategory,
-            Campaign: trackCampaign,
+           
         };
 
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
+        event_properties['Campaign'] = utmCampaign;
         amplitude.track('click', event_properties);
     }
 }
