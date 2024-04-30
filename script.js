@@ -26,7 +26,7 @@ function submitForm() {
     // Simulate a successful form submission for demonstration purposes.
     // alert('Form submitted successfully!');
     
-sleep(300);
+sleep(500);
     // Redirect to the confirmation page after submission.
      var queryString = window.location.search;
     var destinationPageURL = "confirmation.html" + queryString;
