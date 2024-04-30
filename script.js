@@ -21,11 +21,7 @@ function updateProgressBar(step) {
 }
 
    
-function sleep(milliseconds) {
- setTimeout(function(){
-    console.log("Waiting");
-}, 2000);
-}
+
 
 function submitForm() {
     // You can add form submission logic here.
