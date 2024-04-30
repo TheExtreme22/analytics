@@ -20,13 +20,23 @@ function updateProgressBar(step) {
     progressBarInner.style.width = `${fillPercentage}%`;
 }
 
+   
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
 function submitForm() {
     // You can add form submission logic here.
     // This is just a placeholder.
     // Simulate a successful form submission for demonstration purposes.
     // alert('Form submitted successfully!');
     
-sleep(500);
+sleep(2000);
     // Redirect to the confirmation page after submission.
      var queryString = window.location.search;
     var destinationPageURL = "confirmation.html" + queryString;
@@ -50,12 +60,4 @@ function redirectToCashier() {
     var destinationPageURL = "cashier.html" + queryString;
     window.location.href = destinationPageURL;
 }
-   
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
+
