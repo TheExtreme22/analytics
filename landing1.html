@@ -26,10 +26,19 @@ function getUrlParameter(name) {
 // PAGE DISPLAY TRACKING *****
 var Feature = 'landing';
 var utmCampaign = getUrlParameter('utm_campaign');
+var utmSource = getUrlParameter('utm_source');
+var utmMedium = getUrlParameter('utm_medium');
+var Promo = getUrlParameter('promo');  
+var Affiliate = getUrlParameter('affiliate_id');
+    
 var event_properties = {
     'Feature': Feature,
     'Id': 'Landing 1',
     'Campaign': utmCampaign,
+    'Source': utmSource,
+    'Medium': utmMedium,
+    'Offer': Promo,
+    'Partner': Affiliate,
     'Display Type': 'pageLoad',
 };
 amplitude.track('display', event_properties);  
