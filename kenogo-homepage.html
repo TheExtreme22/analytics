@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v3.3</title>
+<title>Carousel with Panels v3.0</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -14,7 +14,7 @@
         margin-bottom: 20px;
     }
     .panel {
-        width: 400px;
+        width: 200px;
         height: 200px;
         display: inline-block;
         scroll-snap-align: start;
@@ -199,7 +199,6 @@
         gamePanelText.textContent = `GAME ${gameNumber}`;
         if (gameNumber !== prevGameNumber) {
             const gameButtons = document.getElementById('gameButtons');
-            gameButtons.innerHTML = '';
             for (let i = 50; i >= gameNumber; i--) {
                 const button = document.createElement('button');
                 button.classList.add('game-button');
