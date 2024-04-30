@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 21</title>
+    <title>Registration Form 22</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -43,11 +43,12 @@
                     Name: trackName,
                     Container: trackContainer,
                     Object: trackObject,
-                    Category: trackCategory
+                    Category: trackCategory,
+                    Value: 'firstfocusin',
                 };
 
                 // Fire amplitude tracking with 'focus' event type
-                amplitude.track('focus', event_properties);
+                amplitude.track('click', event_properties);
                 console.log('Tracking event fired:', event_properties);
             }
         }
