@@ -4,100 +4,92 @@
     <title>Registration Form</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
-<script>
-var pageLoadTime=new Date().getTime();
-var feature='registration';    
-</script>
-<script src="tracking.js"></script>  
+    <script>
+        var pageLoadTime = new Date().getTime();
+        var feature = 'registration';
+    </script>
+    <script src="tracking.js"></script>
+    <script>
+        amplitude.init('7c006931281cce1851f85c92540cbeb9', {
+            defaultTracking: {
+                pageViews: false,
+            },
+        });
 
- <script type="text/javascript">
-!function(){"use strict";!function(e,t){var n=e.amplitude||{_q:[],_iq:{}};if(n.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var r=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,n){return function(r){e._q.push({name:t,args:Array.prototype.slice.call(n,0),resolve:r})}},o=function(e,t,n){e[t]=function(){if(n)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))}}},i=function(e){for(var t=0;t<m.length;t++)o(e,m[t],!1);for(var n=0;n<g.length;n++)o(e,g[n],!0)};n.invoked=!0;var u=t.createElement("script");u.type="text/javascript",u.integrity="sha384-x0ik2D45ZDEEEpYpEuDpmj05fY91P7EOZkgdKmq4dKL/ZAVcufJ+nULFtGn0HIZE",u.crossOrigin="anonymous",u.async=!0,u.src="https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js.gz",u.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var a=t.getElementsByTagName("script")[0];a.parentNode.insertBefore(u,a);for(var c=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],l=0;l<p.length;l++)r(c,p[l]);n.Identify=c;for(var d=function(){return this._q=[],this},f=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],v=0;v<f.length;v++)r(d,f[v]);n.Revenue=d;var m=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],g=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];i(n),n.createInstance=function(e){return n._iq[e]={_q:[]},i(n._iq[e]),n._iq[e]},e.amplitude=n}}(window,document)}();
+        var event_properties = {
+            Feature: feature,
+            Id: 'register',
+            Category: 'Step 1',
+            DisplayType: 'pageLoad',
+        };
 
-amplitude.init('7c006931281cce1851f85c92540cbeb9',
-{
-defaultTracking: {
-    pageViews: false,
-    },
-});
-
-//pageLoad     
-var event_properties= {
-    Feature: feature,
-    Id: 'register',
-    Category: 'Step 1', 
-    DisplayType: 'pageLoad',
-};
-     
-amplitude.track('display',event_properties);
-
-</script>   
-    
+        amplitude.track('display', event_properties);
+    </script>
 </head>
 <body>
-    <div class="header">
-        <img class="logo" src="logo.png" alt="Extreme Betting Logo">
-    </div>
-    <div class="progress-bar">
-        <div class="progress-bar-inner" style="width: 0;"></div>
-    </div>
-    <div class="form-container">
-        <form id="register" action="submit_registration.php" method="post">
-            <div class="form-step active" id="step-1">
-                <h2>Step 1: Account Information</h2>
-                <label for="email">Email:</label>
-                <input type="email" id="field.email" name="email" data-track-name="email" data-track-container="register" data-track-object="field" data-track-category="step 1" required>
+<div class="header">
+    <img class="logo" src="logo.png" alt="Extreme Betting Logo">
+</div>
+<div class="progress-bar">
+    <div class="progress-bar-inner" style="width: 0;"></div>
+</div>
+<div class="form-container">
+    <form id="register" action="submit_registration.php" method="post">
+        <div class="form-step active" id="step-1">
+            <h2>Step 1: Account Information</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="field.email" name="email" data-track-name="email" data-track-container="register"
+                   data-track-object="field" data-track-category="step 1" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="field.password"  gtm="field.password.start"  name="password" data-track-name="password" data-track-container="register" data-track-object="field" data-track-category="step 1" required>
+            <label for="password">Password:</label>
+            <input type="password" id="field.password" gtm="field.password.start" name="password"
+                   data-track-name="password" data-track-container="register" data-track-object="field"
+                   data-track-category="step 1" required>
 
-                <button id="button.step_1.next" type="button" onclick="nextStep(1)">Next</button>
-            </div>
-
-            <div class="form-step" id="step-2">
-                <h2>Step 2: Personal Information</h2>
-                <label for="first-name">First Name:</label>
-                <input type="text" id="field.first_name" name="first-name" required>
-
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="field.last_name" name="last-name" required>
-
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="field.dob" name="dob" required>
-
-                <button id="button.step_2.back" type="button" onclick="prevStep(2)">Back</button>
-                <button id="button.step_2.next" type="button" onclick="nextStep(2)">Next</button>
-            </div>
-
-            <div class="form-step" id="step-3">
-                <h2>Step 3: Address Information</h2>
-                <label for="address">Address:</label>
-                <input type="text" id="field.address" name="address" required>
-
-                <button id="button.step_3.back" type="button" onclick="prevStep(3)">Back</button>
-                <button id="button.submit" type="button" onclick="submitForm()">Submit</button>
-            </div>
-        </form>
-    </div>
-
-    <div class="footer">
-        <div class="social-links">
-            <a id="link.facebook" class="social-link" href="#">Facebook</a>
-            <a id="link.twitter" class="social-link" href="#">Twitter</a>
-            <a id="link.instagram" class="social-link" href="#">Instagram</a>
+            <button id="button.step_1.next" type="button" onclick="nextStep(1)">Next</button>
         </div>
-    </div>
 
-   
-  
-</body>
-<script src="script.js"></script>  
+        <div class="form-step" id="step-2">
+            <h2>Step 2: Personal Information</h2>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="field.first_name" name="first-name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="field.last_name" name="last-name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="field.dob" name="dob" required>
+
+            <button id="button.step_2.back" type="button" onclick="prevStep(2)">Back</button>
+            <button id="button.step_2.next" type="button" onclick="nextStep(2)">Next</button>
+        </div>
+
+        <div class="form-step" id="step-3">
+            <h2>Step 3: Address Information</h2>
+            <label for="address">Address:</label>
+            <input type="text" id="field.address" name="address" required>
+
+            <button id="button.step_3.back" type="button" onclick="prevStep(3)">Back</button>
+            <button id="button.submit" type="button" onclick="submitForm()">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div class="footer">
+    <div class="social-links">
+        <a id="link.facebook" class="social-link" href="#">Facebook</a>
+        <a id="link.twitter" class="social-link" href="#">Twitter</a>
+        <a id="link.instagram" class="social-link" href="#">Instagram</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to handle click event on input fields
-    function handleInputClick(event) {
+    // Function to track when a form field receives focus
+    function trackOnFieldFocus(event) {
         var target = event.target;
-        // Check if the clicked input field has a data-track attribute
+        // Check if the focused element has a data-track attribute
         if (target.hasAttribute('data-track')) {
             // Extract attributes prefixed with "data-track"
             var trackAttributes = {};
@@ -123,13 +115,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Get all input fields with data-track attribute
-    var inputFields = document.querySelectorAll('input[data-track]');
-    // Attach click event listener to each input field
-    inputFields.forEach(function(inputField) {
-        inputField.addEventListener('click', handleInputClick);
+    // Attach focus event listener to all form fields with data-track attribute
+    var formFields = document.querySelectorAll('input[data-track]');
+    formFields.forEach(function (formField) {
+        formField.addEventListener('focus', trackOnFieldFocus);
     });
-});
 </script>
-    
+
+</body>
 </html>
