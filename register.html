@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 33</title>
+    <title>Registration Form 34</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -25,28 +25,8 @@
      };
      amplitude.track('display', event_properties);
 
-     // ADD FIELD LISTENERS *****
-     // Attach focus event listener to all form fields with data-track attribute
-     document.addEventListener('focusin', function(event) {
-         var target = event.target;
-         if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
-             trackOnFieldFocus(event);
-         }
-     });
-
-     // ADD LINKS LISTENERS *****
-     // Attach click event listener to all links with data-track-name attribute
-     var links = document.querySelectorAll('a[data-track-name]');
-     links.forEach(function(link) {
-         link.addEventListener('click', trackLinkClick);
-     });
-
-     // ADD BUTTON LISTENERS *****
-     // Attach click event listener to all buttons with data-track-name attribute
-     var buttons = document.querySelectorAll('button[data-track-name]');
-     buttons.forEach(function(button) {
-         button.addEventListener('click', trackButtonClick);
-     });
+    // Call the setupTracking function to attach event listeners
+    setupListeners('registration');
 
  });
 
