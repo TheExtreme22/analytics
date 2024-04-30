@@ -20,6 +20,14 @@ function prevStep(step) {
     document.getElementById(`step-${step - 1}`).classList.add('active');
     currentStep = step - 1;
     updateProgressBar(currentStep);
+     //TRACKING
+    var event_properties = {
+            'Feature': 'registration',
+            'Id': 'register',
+            'Category': 'Step '+currentStep,
+            'Display Type': 'impression',
+        };
+    amplitude.track('display', event_properties);
 }
 
 function updateProgressBar(step) {
