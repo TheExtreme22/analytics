@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v2.9</title>
+<title>Carousel with Panels v3.0</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -187,21 +187,7 @@
         `;
     }
 
-    // JavaScript to handle game button clicks
-    function changeGame(gameNumber) {
-        const gameButtonsContainer = document.getElementById('gameButtons');
-        gameButtonsContainer.innerHTML = '';
-        for (let i = 10; i >= gameNumber; i--) {
-            const button = document.createElement('button');
-            button.classList.add('game-button');
-            button.textContent = i;
-            button.onclick = () => changeGame(i);
-            gameButtonsContainer.appendChild(button);
-        }
-        const gamePanel = document.querySelector('.game-panel');
-        gamePanel.textContent = `GAME ${gameNumber}`;
-    }
-
+  
     // Show default tab and game panel
     changeTab(1);
     changeGame(10);
