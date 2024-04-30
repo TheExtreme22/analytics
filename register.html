@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 22</title>
+    <title>Registration Form 23</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -82,7 +82,7 @@
                    data-track-name="password" data-track-container="register" data-track-object="field"
                    data-track-category="step 1" required>
 
-            <button id="button.step_1.next" type="button" onclick="nextStep(1)">Next</button>
+            <button id="button.step_1.next" type="button" onclick="nextStep(1)" data-track-container="register" data-track-object="button" data-track-name="next" data-track-category="step 1" >Next</button>
         </div>
 
          <div class="form-step" id="step-2">
@@ -99,8 +99,8 @@
             <input type="date" id="field.dob" name="dob" data-track-name="dob" data-track-container="register"
                    data-track-object="field" data-track-category="step 1" required>
 
-            <button id="button.step_2.back" type="button" onclick="prevStep(2)">Back</button>
-            <button id="button.step_2.next" type="button" onclick="nextStep(2)">Next</button>
+            <button id="button.step_2.back" type="button" onclick="prevStep(2)" data-track-container="register" data-track-object="button" data-track-name="back" data-track-category="step 2" >Back</button>
+            <button id="button.step_2.next" type="button" onclick="nextStep(2)" data-track-container="register" data-track-object="button" data-track-name="next" data-track-category="step 2" >Next</button>
         </div>
 
         <div class="form-step" id="step-3">
@@ -109,8 +109,8 @@
             <input type="text" id="field.address" name="address" data-track-name="address" data-track-container="register"
                    data-track-object="field" data-track-category="step 3" required>
 
-            <button id="button.step_3.back" type="button" onclick="prevStep(3)">Back</button>
-            <button id="button.submit" type="button" onclick="submitForm()">Submit</button>
+            <button id="button.step_3.back" type="button" onclick="prevStep(3)" data-track-container="register" data-track-object="button" data-track-name="back" data-track-category="step 3" >Back</button>
+            <button id="button.submit" type="button" onclick="submitForm()" data-track-container="register" data-track-object="button" data-track-name="submit" data-track-category="step 3" >Submit</button>
         </div>
 
     </form>
