@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 20</title>
+    <title>Registration Form 21</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -30,8 +30,8 @@
             console.log('Field focused');
             var target = event.target;
             // Check if the focused element has a data-track attribute
-            if (target.hasAttribute('data-track')) {
-                // Extract attributes prefixed with "data-track"
+            if (target.hasAttribute('data-track-name')) {
+                // Extract attributes prefixed with "data-track-name"
                 var trackName = target.getAttribute('data-track-name');
                 var trackContainer = target.getAttribute('data-track-container') || '';
                 var trackObject = target.getAttribute('data-track-object') || '';
@@ -55,7 +55,7 @@
         // Attach focus event listener to all form fields with data-track attribute
         document.addEventListener('focusin', function(event) {
             var target = event.target;
-            if (target.tagName === 'INPUT' && target.hasAttribute('data-track')) {
+            if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
                 trackOnFieldFocus(event);
             }
         });
