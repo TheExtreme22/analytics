@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 24</title>
+    <title>Registration Form 25</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -53,7 +53,18 @@
             }
         }
 
-        // FUNCTION TO TRACK BUTTON CLICKS
+        // Attach focus event listener to all form fields with data-track attribute
+        document.addEventListener('focusin', function(event) {
+            var target = event.target;
+            if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
+                trackOnFieldFocus(event);
+            }
+        });
+
+
+
+
+      // FUNCTION TO TRACK BUTTON CLICKS
         function trackButtonClick(event) {
             var target = event.target;
             if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
@@ -71,19 +82,20 @@
                     Category: trackCategory
                 };
 
-         // Attach click event listener to all buttons with data-track-name attribute
+                // Fire amplitude tracking with 'click' event type
+                amplitude.track('click', event_properties);
+                console.log('Button click event fired:', event_properties);
+            }
+        }
+
+        // Attach click event listener to all buttons with data-track-name attribute
         var buttons = document.querySelectorAll('button[data-track-name]');
         buttons.forEach(function(button) {
             button.addEventListener('click', trackButtonClick);
         });
 
-        // Attach focus event listener to all form fields with data-track attribute
-        document.addEventListener('focusin', function(event) {
-            var target = event.target;
-            if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
-                trackOnFieldFocus(event);
-            }
-        });
+
+        
     </script>
 </head>
 <body>
