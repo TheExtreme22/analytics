@@ -1,62 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 39</title>
+    <title>Registration Form 41</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-   
+    
     <script type="text/javascript">
 !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-BHj/6N+ZSiRDYRUHPEqr/nwkUsSk3s9r1ryQeFBc4x2OiVz4peW3jSccKZsoU8Ry",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-beta.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
 
  document.addEventListener("DOMContentLoaded", function() {
-
-     // INITIALISE TRACKING *****
-     amplitude.init('535a35b01503cd1dc00df9f74f844368', {
-         defaultTracking: {
-             pageViews: false,
-         },
-     });
-
-     // PAGE DISPLAY TRACKING *****
-     var event_properties = {
-         'Feature': 'registration',
-         'Id': 'register',
-         'Category': 'Step 1',
-         'Display Type': 'pageLoad',
-     };
-     amplitude.track('display', event_properties);
-
-     });
-
+        // INITIALISE TRACKING
+        amplitude.init('535a35b01503cd1dc00df9f74f844368', {
+            defaultTracking: {
+                pageViews: false,
+            },
+        });
         
+        // PAGE DISPLAY TRACKING
+        var event_properties = {
+            'Feature': 'registration',
+            'Id': 'register',
+            'Category': 'Step 1',
+            'Display Type': 'pageLoad',
+        };
+        amplitude.track('display', event_properties);
+
+
+
      
-// SET UP LISTENERS *****
-function setupListeners(Feature) {
-    // Attach click event listener to all links with data-track-name attribute
-    var links = document.querySelectorAll('a[data-track-name]');
-    links.forEach(function(link) {
-        link.addEventListener('click', trackLinkClick);
-    });
-
-    // Attach click event listener to all buttons with data-track-name attribute
-    var buttons = document.querySelectorAll('button[data-track-name]');
-    buttons.forEach(function(button) {
-        button.addEventListener('click', trackButtonClick);
-    });
-
-    // Attach focus event listener to all form fields with data-track-name attribute
-    document.addEventListener('focusin', function(event) {
-        var target = event.target;
-        if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
-            trackOnFieldFocus(event);
-        }
-    });
-}
-     setupListeners('registration');
-
-
-
         
-</script>
+
+ // FIELD TRACKING
+        // Function to track when a form field receives focus
+        function trackOnFieldFocus(event) {
+            console.log('Field focused');
+            var target = event.target;
+            // Check if the focused element has a data-track attribute
+            if (target.hasAttribute('data-track-name')) {
+                // Extract attributes prefixed with "data-track-name"
+                var trackName = target.getAttribute('data-track-name');
+                var trackContainer = target.getAttribute('data-track-container') || '';
+                var trackObject = target.getAttribute('data-track-object') || '';
+                var trackCategory = target.getAttribute('data-track-category') || '';
+
+                // Construct event properties object
+                var event_properties = {
+                    Feature: 'registration',
+                    Name: trackName,
+                    Container: trackContainer,
+                    Object: trackObject,
+                    Category: trackCategory,
+                    Value: 'firstfocusin',
+                };
+
+                // Fire amplitude tracking with 'focus' event type
+                amplitude.track('click', event_properties);
+                console.log('Tracking event fired:', event_properties);
+            }
+        }
+
+        // Attach focus event listener to all form fields with data-track attribute
+        document.addEventListener('focusin', function(event) {
+            var target = event.target;
+            if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
+                trackOnFieldFocus(event);
+            }
+        });
+
+
+     // FUNCTION TO TRACK LINK CLICKS
+    function trackLinkClick(event) {
+    var target = event.target;
+    if (target.tagName === 'A' && target.hasAttribute('data-track-name')) {
+        var trackName = target.getAttribute('data-track-name');
+        var trackContainer = target.getAttribute('data-track-container') || '';
+        var trackObject = target.getAttribute('data-track-object') || '';
+        var trackCategory = target.getAttribute('data-track-category') || '';
+
+        // Construct event properties object
+        var event_properties = {
+            Feature: 'registration', 
+            Name: trackName,
+            Container: trackContainer,
+            Object: trackObject,
+            Category: trackCategory
+        };
+
+        // Fire amplitude tracking with 'click' event type
+        amplitude.track('click', event_properties);
+        console.log('Link click event fired:', event_properties);
+    }
+}
+
+// Attach click event listener to all links with data-track-name attribute
+var links = document.querySelectorAll('a[data-track-name]');
+links.forEach(function(link) {
+    link.addEventListener('click', trackLinkClick);
+});
+
+
+      // FUNCTION TO TRACK BUTTON CLICKS
+        function trackButtonClick(event) {
+            var target = event.target;
+            if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
+                var trackName = target.getAttribute('data-track-name');
+                var trackContainer = target.getAttribute('data-track-container') || '';
+                var trackObject = target.getAttribute('data-track-object') || '';
+                var trackCategory = target.getAttribute('data-track-category') || '';
+
+                // Construct event properties object
+                var event_properties = {
+                    Feature: 'registration',
+                    Name: trackName,
+                    Container: trackContainer,
+                    Object: trackObject,
+                    Category: trackCategory
+                };
+
+                // Fire amplitude tracking with 'click' event type
+                amplitude.track('click', event_properties);
+                console.log('Button click event fired:', event_properties);
+            }
+        }
+
+        // Attach click event listener to all buttons with data-track-name attribute
+        var buttons = document.querySelectorAll('button[data-track-name]');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', trackButtonClick);
+        });
+
+
+          });
+    </script>
 </head>
 
 <body>
@@ -128,7 +202,7 @@ function setupListeners(Feature) {
     </div>
 </div>
 
- <script src="script.js"></script>
+    //<script src="script.js"></script>
 
 
 </body>
