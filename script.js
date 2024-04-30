@@ -190,3 +190,11 @@ var buttons = document.querySelectorAll('button[data-track-name]');
 buttons.forEach(function(button) {
     button.addEventListener('click', trackButtonClick);
 });
+
+// GET URL PARAMETER
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
