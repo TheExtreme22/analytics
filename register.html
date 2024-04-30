@@ -23,10 +23,12 @@ defaultTracking: {
 //pageLoad     
 const event = {
     event_type:'display',
-    Feature: feature,
-    Id: 'register',
-    Category: 'Step 2', 
-    DisplayType: 'pageLoad',
+    {
+        Feature: feature,
+        Id: 'register',
+        Category: 'Step 2', 
+        DisplayType: 'pageLoad',
+    }
 };
 amplitude.track(event);
 </script>   
