@@ -5,21 +5,24 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="tracking.js"></script>
     <script type="text/javascript">
+    // INITIALISE TRACKING
         amplitude.init('535a35b01503cd1dc00df9f74f844368', {
             defaultTracking: {
                 pageViews: false,
             },
         });
-
+        
+    //PAGE DISPLAY TRACKING
         var event_properties = {
             'Feature': 'registration',
             'Id': 'register',
             'Category': 'Step 1',
             'Display Type': 'pageLoad',
         };
-
         amplitude.track('display', event_properties);
 
+        
+    // FIELD TRACKING
         // Function to track when a form field receives focus
         function trackOnFieldFocus(event) {
             var target = event.target;
@@ -54,6 +57,7 @@
         formFields.forEach(function (formField) {
             formField.addEventListener('focus', trackOnFieldFocus);
         });
+        
     </script>
 </head>
 <body>
