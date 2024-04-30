@@ -26,7 +26,7 @@ function submitForm() {
     // Simulate a successful form submission for demonstration purposes.
     // alert('Form submitted successfully!');
     
-sleep(1000);
+sleep(300);
     // Redirect to the confirmation page after submission.
      var queryString = window.location.search;
     var destinationPageURL = "confirmation.html" + queryString;
@@ -51,4 +51,11 @@ function redirectToCashier() {
     window.location.href = destinationPageURL;
 }
    
-
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
