@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    background-color: #8CBF1C;
+    background-color: #A4CC26;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -68,7 +68,7 @@ input {
 
 button {
     display: inline-block;
-    background-color: #8CBF1C;
+    background-color: #A4CC26;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -85,7 +85,7 @@ h2 {
 }
 
 .footer {
-    background-color: #8CBF1C;
+    background-color: #A4CC26;
     color: #fff;
     text-align: center;
     padding: 10px;
