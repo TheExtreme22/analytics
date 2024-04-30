@@ -50,7 +50,7 @@ var randomNumber = Math.floor(Math.random() * 100);
     } else {
         // Track success
         event_properties.Outcome = 'success';
-        event_properties.Status: 'verified';
+        event_properties.Status= 'verified';
         alert('Registration Success');
     }
 
