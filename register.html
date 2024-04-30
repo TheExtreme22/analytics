@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 7</title>
+    <title>Registration Form 8</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="tracking.js"></script>
     <script type="text/javascript">
-    // INITIALISE TRACKING
+        // INITIALISE TRACKING
         amplitude.init('535a35b01503cd1dc00df9f74f844368', {
             defaultTracking: {
                 pageViews: false,
             },
         });
         
-    //PAGE DISPLAY TRACKING
+        // PAGE DISPLAY TRACKING
         var event_properties = {
             'Feature': 'registration',
             'Id': 'register',
@@ -21,8 +21,7 @@
         };
         amplitude.track('display', event_properties);
 
-        
-    // FIELD TRACKING
+        // FIELD TRACKING
         // Function to track when a form field receives focus
         function trackOnFieldFocus(event) {
             var target = event.target;
@@ -47,8 +46,8 @@
                     Category: trackAttributes.category || ''
                 };
 
-                // Fire amplitude tracking with 'click' event type
-                amplitude.track('click', event_properties);
+                // Fire amplitude tracking with 'focus' event type
+                amplitude.track('focus', event_properties);
             }
         }
 
@@ -57,7 +56,6 @@
         formFields.forEach(function (formField) {
             formField.addEventListener('focus', trackOnFieldFocus);
         });
-        
     </script>
 </head>
 <body>
@@ -72,12 +70,12 @@
         <div class="form-step active" id="step-1">
             <h2>Step 1: Account Information</h2>
             <label for="email">Email:</label>
-            <input type="email" id="field.email" name="email" data-track-name="email" data-track-container="register"
+            <input type="email" id="field.email" name="email" data-track="email" data-track-container="register"
                    data-track-object="field" data-track-category="step 1" required>
 
             <label for="password">Password:</label>
             <input type="password" id="field.password" name="password"
-                   data-track-name="password" data-track-container="register" data-track-object="field"
+                   data-track="password" data-track-container="register" data-track-object="field"
                    data-track-category="step 1" required>
 
             <button id="button.step_1.next" type="button" onclick="nextStep(1)">Next</button>
