@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 27</title>
+    <title>Registration Form 28</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -67,6 +67,35 @@
         });
 
 
+     // FUNCTION TO TRACK LINK CLICKS
+    function trackLinkClick(event) {
+    var target = event.target;
+    if (target.tagName === 'A' && target.hasAttribute('data-track-name')) {
+        var trackName = target.getAttribute('data-track-name');
+        var trackContainer = target.getAttribute('data-track-container') || '';
+        var trackObject = target.getAttribute('data-track-object') || '';
+        var trackCategory = target.getAttribute('data-track-category') || '';
+
+        // Construct event properties object
+        var event_properties = {
+            Feature: 'registration', 
+            Name: trackName,
+            Container: trackContainer,
+            Object: trackObject,
+            Category: trackCategory
+        };
+
+        // Fire amplitude tracking with 'click' event type
+        amplitude.track('click', event_properties);
+        console.log('Link click event fired:', event_properties);
+    }
+}
+
+// Attach click event listener to all links with data-track-name attribute
+var links = document.querySelectorAll('a[data-track-name]');
+links.forEach(function(link) {
+    link.addEventListener('click', trackLinkClick);
+});
 
 
       // FUNCTION TO TRACK BUTTON CLICKS
@@ -159,9 +188,9 @@
 
 <div class="footer">
     <div class="social-links">
-        <a id="link.facebook" class="social-link" href="#">Facebook</a>
-        <a id="link.twitter" class="social-link" href="#">Twitter</a>
-        <a id="link.instagram" class="social-link" href="#">Instagram</a>
+        <a id="link.facebook" class="social-link" href="#" data-track-container="footer" data-track-object="link" data-track-name="Facebook" data-track-category="Social" >Facebook</a>
+        <a id="link.twitter" class="social-link" href="#" data-track-object="link" data-track-name="X (Twitter)" data-track-category="Social" >Twitter</a>
+        <a id="link.instagram" class="social-link" href="#" data-track-object="link" data-track-name="Instagram" data-track-category="Social" >Instagram</a>
     </div>
 </div>
 
