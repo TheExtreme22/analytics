@@ -175,7 +175,8 @@ function trackButtonClick(event) {
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
-            Category: trackCategory
+            Category: trackCategory,
+            Campaign: trackCampaign,
         };
 
         // Fire amplitude tracking with 'click' event type
