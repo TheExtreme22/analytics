@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v2.3</title>
+<title>Carousel with Panels v2.4</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -81,6 +81,7 @@
     .game-panel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
         margin-bottom: 20px;
+        text-align: center;
     }
     .game-button {
         padding: 10px 20px;
@@ -142,22 +143,12 @@
     <div id="tabContent" class="tab-content"></div>
 </div>
 
-<div class="game-panel">
-    <div class="panel">
-        <button class="game-button" onclick="changeGame(10)">Log in</button>
-    </div>
-    <div class="panel">
-        <button class="game-button" onclick="changeGame(9)">Register</button>
-    </div>
-    <div class="panel">
-        <button class="game-button" onclick="changeGame(8)">Deposit</button>
-    </div>
-    <div class="panel">
-        <button class="game-button" onclick="changeGame(7)">Blog</button>
-    </div>
-    <div class="panel">
-        <button class="game-button" onclick="changeGame(6)">FAQs</button>
-    </div>
+<div class="game-panel panel">
+    <button class="game-button" onclick="changeGame(10)">10</button>
+    <button class="game-button" onclick="changeGame(9)">9</button>
+    <button class="game-button" onclick="changeGame(8)">8</button>
+    <button class="game-button" onclick="changeGame(7)">7</button>
+    <button class="game-button" onclick="changeGame(6)">6</button>
 </div>
 
 <script>
