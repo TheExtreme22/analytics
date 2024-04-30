@@ -7,11 +7,11 @@ function nextStep(step) {
     updateProgressBar(currentStep);
     //TRACKING
     var event_properties = {
-            'Feature': 'registration',
-            'Id': 'register',
-            'Category': 'Step '+currentStep,
-            'Display Type': 'impression',
-        };
+        'Feature': 'registration',
+        'Id': 'register',
+        'Category': 'Step ' + currentStep,
+        'Display Type': 'impression',
+    };
     amplitude.track('display', event_properties);
 }
 
@@ -20,13 +20,13 @@ function prevStep(step) {
     document.getElementById(`step-${step - 1}`).classList.add('active');
     currentStep = step - 1;
     updateProgressBar(currentStep);
-     //TRACKING
+    //TRACKING
     var event_properties = {
-            'Feature': 'registration',
-            'Id': 'register',
-            'Category': 'Step '+currentStep,
-            'Display Type': 'impression',
-        };
+        'Feature': 'registration',
+        'Id': 'register',
+        'Category': 'Step ' + currentStep,
+        'Display Type': 'impression',
+    };
     amplitude.track('display', event_properties);
 }
 
@@ -36,7 +36,7 @@ function updateProgressBar(step) {
     progressBarInner.style.width = `${fillPercentage}%`;
 }
 
-   
+
 
 
 function submitForm() {
@@ -46,33 +46,33 @@ function submitForm() {
     // alert('Form submitted successfully!');
 
 
-    
-    // Construct event properties object
- var event_properties = {
-    Feature: 'registration',
-    Name: 'outcome',
-   
-};
 
-// Generate a random number between 0 and 99
-var randomNumber = Math.floor(Math.random() * 100);
+    // Construct event properties object
+    var event_properties = {
+        Feature: 'registration',
+        Name: 'outcome',
+
+    };
+
+    // Generate a random number between 0 and 99
+    var randomNumber = Math.floor(Math.random() * 100);
 
     // Assuming a 20% failure rate
     if (randomNumber < 20) {
         // Track failure
         event_properties.Outcome = 'failure';
-        event_properties.Error='Duplicate_Account';
+        event_properties.Error = 'Duplicate_Account';
         alert('Registration Failure');
     } else {
         // Track success
         event_properties.Outcome = 'success';
-        event_properties.Status= 'verified';
+        event_properties.Status = 'verified';
         alert('Registration Success');
     }
     amplitude.track('outcome', event_properties);
 
     // Redirect to the confirmation page after submission.
-     // var queryString = window.location.search;
+    // var queryString = window.location.search;
     //var destinationPageURL = "confirmation.html" + queryString;
     //window.location.href = destinationPageURL;
 }
@@ -95,37 +95,37 @@ function redirectToCashier() {
     window.location.href = destinationPageURL;
 }
 
- // FIELD TRACKING
-        // Function to track when a form field receives focus
-        function trackOnFieldFocus(event) {
-            console.log('Field focused');
-            var target = event.target;
-            // Check if the focused element has a data-track attribute
-            if (target.hasAttribute('data-track-name')) {
-                // Extract attributes prefixed with "data-track-name"
-                var trackName = target.getAttribute('data-track-name');
-                var trackContainer = target.getAttribute('data-track-container') || '';
-                var trackObject = target.getAttribute('data-track-object') || '';
-                var trackCategory = target.getAttribute('data-track-category') || '';
+// FIELD TRACKING
+// Function to track when a form field receives focus
+function trackOnFieldFocus(event) {
+    console.log('Field focused');
+    var target = event.target;
+    // Check if the focused element has a data-track attribute
+    if (target.hasAttribute('data-track-name')) {
+        // Extract attributes prefixed with "data-track-name"
+        var trackName = target.getAttribute('data-track-name');
+        var trackContainer = target.getAttribute('data-track-container') || '';
+        var trackObject = target.getAttribute('data-track-object') || '';
+        var trackCategory = target.getAttribute('data-track-category') || '';
 
-                // Construct event properties object
-                var event_properties = {
-                    Feature: 'registration',
-                    Name: trackName,
-                    Container: trackContainer,
-                    Object: trackObject,
-                    Category: trackCategory,
-                    Value: 'firstfocusin',
-                };
+        // Construct event properties object
+        var event_properties = {
+            Feature: 'registration',
+            Name: trackName,
+            Container: trackContainer,
+            Object: trackObject,
+            Category: trackCategory,
+            Value: 'firstfocusin',
+        };
 
-                // Fire amplitude tracking with 'focus' event type
-                amplitude.track('click', event_properties);
-                console.log('Tracking event fired:', event_properties);
-            }
-        }
+        // Fire amplitude tracking with 'focus' event type
+        amplitude.track('click', event_properties);
+        console.log('Tracking event fired:', event_properties);
+    }
+};
 
-  // FUNCTION TO TRACK LINK CLICKS
-    function trackLinkClick(event) {
+// FUNCTION TO TRACK LINK CLICKS
+function trackLinkClick(event) {
     var target = event.target;
     if (target.tagName === 'A' && target.hasAttribute('data-track-name')) {
         var trackName = target.getAttribute('data-track-name');
@@ -135,33 +135,35 @@ function redirectToCashier() {
 
         // Construct event properties object
         var event_properties = {
-            Feature: 'registration', 
+            Feature: 'registration',
+            Name: trackName,
+            Container: trackContainer,
+            Object: trackObject,
+            Category: trackCategory
+        };
+    }
+};
+
+// FUNCTION TO TRACK BUTTON CLICKS
+function trackButtonClick(event) {
+    var target = event.target;
+    if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
+        var trackName = target.getAttribute('data-track-name');
+        var trackContainer = target.getAttribute('data-track-container') || '';
+        var trackObject = target.getAttribute('data-track-object') || '';
+        var trackCategory = target.getAttribute('data-track-category') || '';
+
+        // Construct event properties object
+        var event_properties = {
+            Feature: 'registration',
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
             Category: trackCategory
         };
 
-            // FUNCTION TO TRACK BUTTON CLICKS
-        function trackButtonClick(event) {
-            var target = event.target;
-            if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
-                var trackName = target.getAttribute('data-track-name');
-                var trackContainer = target.getAttribute('data-track-container') || '';
-                var trackObject = target.getAttribute('data-track-object') || '';
-                var trackCategory = target.getAttribute('data-track-category') || '';
-
-                // Construct event properties object
-                var event_properties = {
-                    Feature: 'registration',
-                    Name: trackName,
-                    Container: trackContainer,
-                    Object: trackObject,
-                    Category: trackCategory
-                };
-
-                // Fire amplitude tracking with 'click' event type
-                amplitude.track('click', event_properties);
-                console.log('Button click event fired:', event_properties);
-            }
-        }
+        // Fire amplitude tracking with 'click' event type
+        amplitude.track('click', event_properties);
+        console.log('Button click event fired:', event_properties);
+    }
+}
