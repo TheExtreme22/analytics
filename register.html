@@ -17,8 +17,10 @@
      });
 
      // PAGE DISPLAY TRACKING *****
+     var Feature='registration';
+     
      var event_properties = {
-         'Feature': 'registration',
+         'Feature': Feature,
          'Id': 'register',
          'Category': 'Step 1',
          'Display Type': 'pageLoad',
@@ -30,19 +32,27 @@
 </head>
 
 <body>
+
+<!-- LOGO -->    
 <div class="header">
     <img class="logo" src="logo-lotto.png" alt="Extreme Betting Logo">
 </div>
- <div class="header">
+
+<!-- HEADER -->    
+<div class="header">
     <div class="header-links">
         <a id="link.facebook" class="header-link" href="#" data-track-container="header" data-track-object="link" data-track-name="login" data-track-category="account" >Log In</a>
         <a id="link.twitter" class="header-link" href="#" data-track-container="header" data-track-object="link" data-track-name="register" data-track-category="account" >Register</a>
         <a id="link.instagram" class="header-link" href="#" data-track-container="header" data-track-object="link" data-track-name="deposit" data-track-category="account" >Deposit</a>
     </div>
 </div>
+
+<!-- PROGRESS BAR -->    
 <div class="progress-bar">
     <div class="progress-bar-inner" style="width: 0;"></div>
 </div>
+
+<!-- INPUT FORM -->
 <div class="form-container">
     <form id="register" action="submit_registration.php" method="post">
         <div class="form-step active" id="step-1">
@@ -89,7 +99,8 @@
 
     </form>
 </div>
-
+    
+<!-- FOOTER -->
 <div class="footer">
     <div class="social-links">
         <a id="link.facebook" class="social-link" href="#" data-track-container="footer" data-track-object="link" data-track-name="Facebook" data-track-category="Social" >Facebook</a>
