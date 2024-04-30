@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels 1.6</title>
+<title>Carousel with Panels v1.7</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -58,19 +58,6 @@
         text-align: center;
         margin-right: 10px;
     }
-
-    /* Animation for winners carousel */
-    @keyframes scrollWinners {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-    .winners-carousel {
-        animation: scrollWinners 10s linear infinite;
-    }
 </style>
 </head>
 <body>
@@ -78,27 +65,27 @@
 <div class="carousel">
     <div class="panel">
         <img class="image" src="image1.jpg" alt="Image 1">
-        <button class="button" onclick="alert('Button 1 clicked')">Log In</button>
+        <button class="button" onclick="alert('Button 1 clicked')">Button 1</button>
     </div>
     <div class="panel">
         <img class="image" src="image2.jpg" alt="Image 2">
-        <button class="button" onclick="alert('Button 2 clicked')">Register</button>
+        <button class="button" onclick="alert('Button 2 clicked')">Button 2</button>
     </div>
     <div class="panel">
         <img class="image" src="image3.jpg" alt="Image 3">
-        <button class="button" onclick="alert('Button 3 clicked')">Deposit</button>
+        <button class="button" onclick="alert('Button 3 clicked')">Button 3</button>
     </div>
     <div class="panel">
         <img class="image" src="image4.jpg" alt="Image 4">
-        <button class="button" onclick="alert('Button 4 clicked')">Blog</button>
+        <button class="button" onclick="alert('Button 4 clicked')">Button 4</button>
     </div>
     <div class="panel">
         <img class="image" src="image5.jpg" alt="Image 5">
-        <button class="button" onclick="alert('Button 5 clicked')">FAQ</button>
+        <button class="button" onclick="alert('Button 5 clicked')">Button 5</button>
     </div>
 </div>
 
-<div class="winners-carousel">
+<div class="winners-carousel" id="winnersCarousel">
     <div class="winner-panel">Jackpot Winner 1 - $1000</div>
     <div class="winner-panel">Jackpot Winner 2 - $1500</div>
     <div class="winner-panel">Jackpot Winner 3 - $2000</div>
@@ -111,13 +98,30 @@
 </div>
 
 <script>
-    // JavaScript to check if a winner panel has moved off-screen and move it to the right
-    const winnersCarousel = document.querySelector('.winners-carousel');
+    // JavaScript to handle scrolling for the winners carousel
+    const winnersCarousel = document.getElementById('winnersCarousel');
 
-    winnersCarousel.addEventListener('animationiteration', () => {
-        const firstPanel = winnersCarousel.querySelector('.winner-panel');
-        winnersCarousel.appendChild(firstPanel);
-    });
+    let scrollPosition = 0;
+    const scrollStep = 200; // Adjust scroll step as needed
+
+    function scrollWinners(direction) {
+        if (direction === 'left') {
+            scrollPosition -= scrollStep;
+            if (scrollPosition < 0) {
+                scrollPosition = 0;
+            }
+        } else {
+            scrollPosition += scrollStep;
+            const maxScroll = winnersCarousel.scrollWidth - winnersCarousel.clientWidth;
+            if (scrollPosition > maxScroll) {
+                scrollPosition = maxScroll;
+            }
+        }
+        winnersCarousel.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
 </script>
 
 </body>
