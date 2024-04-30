@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v2.2</title>
+<title>Carousel with Panels v2.3</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -79,10 +79,8 @@
 
     /* Panel with game buttons */
     .game-panel {
-        width: 100%;
-        border: 1px solid #ccc;
-        padding: 20px;
-        text-align: center;
+        width: calc(100% - 50px); /* Subtracting 50px for the gap */
+        margin-bottom: 20px;
     }
     .game-button {
         padding: 10px 20px;
@@ -117,11 +115,11 @@
     </div>
     <div class="panel">
         <img class="image" src="image5.jpg" alt="Image 5">
-        <button class="button" onclick="alert('Button 5 clicked')"FAQs</button>
+        <button class="button" onclick="alert('Button 5 clicked')">FAQs</button>
     </div>
      <div class="panel">
         <img class="image" src="image6.jpg" alt="Image 5">
-        <button class="button" onclick="alert('Button 6 clicked')"Promo</button>
+        <button class="button" onclick="alert('Button 6 clicked')">Promo</button>
     </div>
 </div>
 
@@ -145,11 +143,21 @@
 </div>
 
 <div class="game-panel">
-    <button class="game-button" onclick="changeGame(10)">10</button>
-    <button class="game-button" onclick="changeGame(9)">9</button>
-    <button class="game-button" onclick="changeGame(8)">8</button>
-    <button class="game-button" onclick="changeGame(7)">7</button>
-    <button class="game-button" onclick="changeGame(6)">6</button>
+    <div class="panel">
+        <button class="game-button" onclick="changeGame(10)">Log in</button>
+    </div>
+    <div class="panel">
+        <button class="game-button" onclick="changeGame(9)">Register</button>
+    </div>
+    <div class="panel">
+        <button class="game-button" onclick="changeGame(8)">Deposit</button>
+    </div>
+    <div class="panel">
+        <button class="game-button" onclick="changeGame(7)">Blog</button>
+    </div>
+    <div class="panel">
+        <button class="game-button" onclick="changeGame(6)">FAQs</button>
+    </div>
 </div>
 
 <script>
