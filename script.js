@@ -7,11 +7,11 @@ function nextStep(step) {
     updateProgressBar(currentStep);
     //TRACKING
     var event_properties = {
-        'Feature': 'registration',
         'Id': 'register',
         'Category': 'Step ' + currentStep,
         'Display Type': 'impression',
     };
+    event_properties['Feature'] = Feature; // Using the registrationFeature variable
     amplitude.track('display', event_properties);
 }
 
@@ -111,7 +111,7 @@ function trackOnFieldFocus(event) {
 
         // Construct event properties object
         var event_properties = {
-            Feature: Feature,
+            Feature: 'registration',
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
