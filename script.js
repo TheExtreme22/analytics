@@ -53,9 +53,7 @@ var randomNumber = Math.floor(Math.random() * 100);
         event_properties.Status= 'verified';
         alert('Registration Success');
     }
-
-    
-    amplitude.track('click', event_properties);
+    amplitude.track('outcome', event_properties);
 
     // Redirect to the confirmation page after submission.
      // var queryString = window.location.search;
