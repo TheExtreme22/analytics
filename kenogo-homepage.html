@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v1.1</title>
+<title>Carousel with Panels v1.2</title>
 <style>
     .carousel {
         width: 100%;
@@ -40,6 +40,39 @@
         height: 100%;
         object-fit: cover;
     }
+
+     /* Additional carousel for winners */
+    .winners-carousel {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .winner-panel {
+        width: 200px;
+        height: 30px;
+        display: inline-block;
+        scroll-snap-align: start;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+        margin-right: 10px; /* Add some space between winner panels */
+    }
+
+    /* Animation for scrolling */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    .winners-carousel {
+        animation: scroll 10s linear infinite;
+    }
+    
 </style>
 </head>
 <body>
@@ -67,5 +100,17 @@
     </div>
 </div>
 
+<div class="winners-carousel">
+    <div class="winner-panel">Jackpot Winner 1 - $1000</div>
+    <div class="winner-panel">Jackpot Winner 2 - $1500</div>
+    <div class="winner-panel">Jackpot Winner 3 - $2000</div>
+    <div class="winner-panel">Jackpot Winner 4 - $2500</div>
+    <div class="winner-panel">Jackpot Winner 5 - $3000</div>
+    <div class="winner-panel">Jackpot Winner 6 - $3500</div>
+    <!-- Add more winner panels as needed -->
+</div>
+
+    
+    
 </body>
 </html>
