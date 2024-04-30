@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v3.5</title>
+<title>Carousel with Panels v3.0</title>
 <style>
     .carousel {
-        width: calc(100% - 1px); /* Subtracting 50px for the gap */
+        width: calc(100%); /* Subtracting 50px for the gap */
         overflow-x: auto;
         white-space: nowrap;
         scroll-snap-type: x mandatory;
@@ -44,7 +44,7 @@
 
     /* Additional carousel for winners */
     .winners-carousel {
-        width: calc(100% - 1px); /* Subtracting 50px for the gap */
+        width: calc(100%); /* Subtracting 50px for the gap */
         overflow: hidden;
         white-space: nowrap;
         margin-bottom: 20px;
@@ -71,6 +71,12 @@
         margin-right: 20px;
         cursor: pointer;
         color: blue;
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
     }
     .tab-content {
         margin-top: 20px;
@@ -78,11 +84,11 @@
 
     /* Panel with game buttons */
     .game-panel {
-        width: 200px;
+        width: calc(100% - 40px); /* Subtracting 40px for padding */
         border: 1px solid #ccc;
         padding: 20px;
         text-align: center;
-        margin-bottom: 20px;
+        margin: 0 auto 20px; /* Center and add bottom margin */
     }
     .game-button {
         padding: 10px 20px;
@@ -95,6 +101,7 @@
         margin-top: 10px;
     }
     .game-text {
+        font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
     }
@@ -103,11 +110,42 @@
 <body>
 
 <div class="carousel">
-    <!-- Your carousel panels -->
+    <div class="panel">
+        <img class="image" src="image1.jpg" alt="Image 1">
+        <button class="button" onclick="alert('Button 1 clicked')">Log in</button>
+    </div>
+    <div class="panel">
+        <img class="image" src="image2.jpg" alt="Image 2">
+        <button class="button" onclick="alert('Button 2 clicked')">Register</button>
+    </div>
+    <div class="panel">
+        <img class="image" src="image3.jpg" alt="Image 3">
+        <button class="button" onclick="alert('Button 3 clicked')">Deposit</button>
+    </div>
+    <div class="panel">
+        <img class="image" src="image4.jpg" alt="Image 4">
+        <button class="button" onclick="alert('Button 4 clicked')">Blog</button>
+    </div>
+    <div class="panel">
+        <img class="image" src="image5.jpg" alt="Image 5">
+        <button class="button" onclick="alert('Button 5 clicked')">FAQs</button>
+    </div>
+     <div class="panel">
+        <img class="image" src="image6.jpg" alt="Image 5">
+        <button class="button" onclick="alert('Button 6 clicked')">Promo</button>
+    </div>
 </div>
 
 <div class="winners-carousel" id="winnersCarousel">
-    <!-- Your winners carousel panels -->
+    <div class="winner-panel">Jackpot Winner 1 - $1000</div>
+    <div class="winner-panel">Jackpot Winner 2 - $1500</div>
+    <div class="winner-panel">Jackpot Winner 3 - $2000</div>
+    <div class="winner-panel">Jackpot Winner 4 - $2500</div>
+    <div class="winner-panel">Jackpot Winner 5 - $3000</div>
+    <div class="winner-panel">Jackpot Winner 6 - $3500</div>
+    <div class="winner-panel">Jackpot Winner 7 - $4000</div>
+    <div class="winner-panel">Jackpot Winner 8 - $4500</div>
+    <!-- Add more winner panels as needed -->
 </div>
 
 <div class="tab-panel panel">
@@ -118,7 +156,7 @@
 </div>
 
 <div class="game-panel panel" id="gamePanel">
-    <div class="game-text" id="gameText"></div>
+    <div class="game-text" id="gameText">Game 50</div>
     <div id="gameButtons">
         <button class="game-button" onclick="changeGame(50)">50</button>
         <button class="game-button" onclick="changeGame(49)">49</button>
@@ -162,13 +200,13 @@
 
     // JavaScript to handle game button clicks
     function changeGame(gameNumber) {
+        const gamePanel = document.getElementById('gamePanel');
         const gameText = document.getElementById('gameText');
         gameText.textContent = `Game ${gameNumber}`;
     }
 
     // Show default tab and game panel
     changeTab(1);
-    changeGame(50); // Display text for the first game by default
 </script>
 
 </body>
