@@ -22,18 +22,14 @@ defaultTracking: {
 
 //pageLoad     
 
-const event_properties= {
+var event_properties= {
     Feature: feature,
     Id: 'register',
     Category: 'Step 2', 
     DisplayType: 'pageLoad',
 },
      
-const event = {
-    event_type:'display',
-    event_properties,
-};
-amplitude.track(event);
+amplitude.track('display',event_properties);
 </script>   
     
 </head>
