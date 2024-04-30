@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script>
-        var pageLoadTime = new Date().getTime();
         var feature = 'registration';
     </script>
     <script src="tracking.js"></script>
@@ -17,7 +16,7 @@
         });
 
         var event_properties = {
-            Feature: feature,
+            Feature: 'registration',
             Id: 'register',
             Category: 'Step 1',
             DisplayType: 'pageLoad',
