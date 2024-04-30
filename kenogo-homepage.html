@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v3.1</title>
+<title>Carousel with Panels v3.2</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -190,12 +190,6 @@
             <img class="image" src="${imageSrc}" alt="Tab Image">
             <button class="button" onclick="${buttonAction}">${buttonText}</button>
         `;
-    }
-
-    // JavaScript to handle game button clicks
-    function changeGame(gameNumber) {
-        const gamePanelText = document.getElementById('gamePanel');
-        gamePanelText.textContent = `GAME ${gameNumber}`;
     }
 
     // Show default tab and game panel
