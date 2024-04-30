@@ -45,7 +45,7 @@ var randomNumber = Math.floor(Math.random() * 100);
     if (randomNumber < 20) {
         // Track failure
         event_properties.Outcome = 'failure';
-        event_properties.error='Duplicate_Account';
+        event_properties.Error='Duplicate_Account';
         alert('Registration Failure');
     } else {
         // Track success
