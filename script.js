@@ -184,6 +184,10 @@ function trackButtonClick(event) {
         // Fire amplitude tracking with 'click' event type
         event_properties['Feature'] = Feature;
         event_properties['Campaign'] = utmCampaign;
+        event_properties['Source'] = utmSource;
+        event_properties['Medium'] = utmMedium;
+        event_properties['Offer'] = Promo;
+        event_properties['Partner'] = Affiliate;
         amplitude.track('click', event_properties);
     }
 }
