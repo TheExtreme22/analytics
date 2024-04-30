@@ -167,3 +167,27 @@ function trackButtonClick(event) {
         console.log('Button click event fired:', event_properties);
     }
 }
+
+
+// Function to set up tracking listeners for buttons, links, and form fields
+function setupListeners() {
+    // Attach click event listener to all links with data-track-name attribute
+    var links = document.querySelectorAll('a[data-track-name]');
+    links.forEach(function(link) {
+        link.addEventListener('click', trackLinkClick);
+    });
+
+    // Attach click event listener to all buttons with data-track-name attribute
+    var buttons = document.querySelectorAll('button[data-track-name]');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', trackButtonClick);
+    });
+
+    // Attach focus event listener to all form fields with data-track-name attribute
+    document.addEventListener('focusin', function(event) {
+        var target = event.target;
+        if (target.tagName === 'INPUT' && target.hasAttribute('data-track-name')) {
+            trackOnFieldFocus(event);
+        }
+    });
+}
