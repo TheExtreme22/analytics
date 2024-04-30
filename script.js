@@ -111,7 +111,7 @@ function trackOnFieldFocus(event) {
 
         // Construct event properties object
         var event_properties = {
-            Feature: 'registration',
+            Feature: Feature,
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
