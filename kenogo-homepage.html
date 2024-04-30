@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v1.0 </title>
+<title>Carousel with Panels v1.1</title>
 <style>
     .carousel {
         width: 100%;
@@ -13,33 +13,32 @@
         -webkit-overflow-scrolling: touch;
     }
     .panel {
-        width: 80vw; /* Adjust width to create space for the image */
-        height: 60vh; /* Adjust height as needed */
+        width: 200px;
+        height: 200px;
         display: inline-block;
         scroll-snap-align: start;
         background-color: #f0f0f0;
-        border: 1px solid #ccc; /* Add border for outline */
-        padding: 20px; /* Add padding for space */
-        box-sizing: border-box; /* Ensure padding is included in width */
-    }
-    .button-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        text-align: center;
+        position: relative; /* Ensure buttons are positioned relative to panels */
     }
     .button {
         padding: 10px 20px;
-        font-size: 18px;
+        font-size: 14px;
         background-color: #007bff;
         color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .image {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 </style>
 </head>
@@ -48,33 +47,23 @@
 <div class="carousel">
     <div class="panel">
         <img class="image" src="image1.jpg" alt="Image 1">
-        <div class="button-container">
-            <button class="button" onclick="alert('Button 1 clicked')">Button 1</button>
-        </div>
+        <button class="button" onclick="alert('Button 1 clicked')">Button 1</button>
     </div>
     <div class="panel">
         <img class="image" src="image2.jpg" alt="Image 2">
-        <div class="button-container">
-            <button class="button" onclick="alert('Button 2 clicked')">Button 2</button>
-        </div>
+        <button class="button" onclick="alert('Button 2 clicked')">Button 2</button>
     </div>
     <div class="panel">
         <img class="image" src="image3.jpg" alt="Image 3">
-        <div class="button-container">
-            <button class="button" onclick="alert('Button 3 clicked')">Button 3</button>
-        </div>
+        <button class="button" onclick="alert('Button 3 clicked')">Button 3</button>
     </div>
     <div class="panel">
         <img class="image" src="image4.jpg" alt="Image 4">
-        <div class="button-container">
-            <button class="button" onclick="alert('Button 4 clicked')">Button 4</button>
-        </div>
+        <button class="button" onclick="alert('Button 4 clicked')">Button 4</button>
     </div>
     <div class="panel">
         <img class="image" src="image5.jpg" alt="Image 5">
-        <div class="button-container">
-            <button class="button" onclick="alert('Button 5 clicked')">Button 5</button>
-        </div>
+        <button class="button" onclick="alert('Button 5 clicked')">Button 5</button>
     </div>
 </div>
 
