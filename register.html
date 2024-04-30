@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 9</title>
+    <title>Registration Form 10</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="tracking.js"></script>
     <script type="text/javascript">
@@ -20,10 +20,12 @@
             'Display Type': 'pageLoad',
         };
         amplitude.track('display', event_properties);
+        console.log('Display event fired');
 
         // FIELD TRACKING
         // Function to track when a form field receives focus
         function trackOnFieldFocus(event) {
+            console.log('Field focused');
             var target = event.target;
             // Check if the focused element has a data-track attribute
             if (target.hasAttribute('data-track')) {
@@ -44,6 +46,7 @@
 
                 // Fire amplitude tracking with 'focus' event type
                 amplitude.track('focus', event_properties);
+                console.log('Tracking event fired:', event_properties);
             }
         }
 
@@ -51,6 +54,7 @@
         var formFields = document.querySelectorAll('input[data-track]');
         formFields.forEach(function (formField) {
             formField.addEventListener('focus', trackOnFieldFocus);
+            console.log('Event listener attached to form field:', formField);
         });
     </script>
 </head>
