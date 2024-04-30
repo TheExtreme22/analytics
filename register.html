@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 3 </title>
+    <title>Registration Form 4 </title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="tracking.js"></script>
 <script type="text/javascript">
@@ -85,7 +85,42 @@
 
 <script src="script.js"></script>
 
+<script>
+    // Function to track when a form field receives focus
+    function trackOnFieldFocus(event) {
+        var target = event.target;
+        // Check if the focused element has a data-track attribute
+        if (target.hasAttribute('data-track')) {
+            // Extract attributes prefixed with "data-track"
+            var trackAttributes = {};
+            for (var i = 0; i < target.attributes.length; i++) {
+                var attribute = target.attributes[i];
+                if (attribute.name.startsWith('data-track')) {
+                    var key = attribute.name.replace('data-track-', '');
+                    trackAttributes[key.charAt(0).toLowerCase() + key.slice(1)] = attribute.value;
+                }
+            }
 
+            // Construct event properties object
+            var event_properties = {
+                Feature: trackAttributes.feature || '',
+                Name: trackAttributes.name || '',
+                Container: trackAttributes.container || '',
+                Object: trackAttributes.object || '',
+                Category: trackAttributes.category || ''
+            };
+
+            // Fire amplitude tracking with 'click' event type
+            amplitude.track('click', event_properties);
+        }
+    }
+
+    // Attach focus event listener to all form fields with data-track attribute
+    var formFields = document.querySelectorAll('input[data-track]');
+    formFields.forEach(function (formField) {
+        formField.addEventListener('focus', trackOnFieldFocus);
+    });
+</script>
 
 </body>
 </html>
