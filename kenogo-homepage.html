@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v1.3</title>
+<title>Carousel with Panels v1.4</title>
 <style>
     .carousel {
         width: 100%;
@@ -72,6 +72,10 @@
     .winners-carousel {
         animation: scroll 10s linear infinite;
     }
+    .winners-carousel {
+        animation: scroll 10s linear infinite;
+    }
+    
     
 </style>
 </head>
@@ -107,9 +111,19 @@
     <div class="winner-panel">Jackpot Winner 4 - $2500</div>
     <div class="winner-panel">Jackpot Winner 5 - $3000</div>
     <div class="winner-panel">Jackpot Winner 6 - $3500</div>
+    <div class="winner-panel">Jackpot Winner 7 - $4000</div>
+    <div class="winner-panel">Jackpot Winner 8 - $4500</div>
     <!-- Add more winner panels as needed -->
 </div>
+<script>
+    // JavaScript to check if a winner panel has moved off-screen and move it to the right
+    const winnersCarousel = document.querySelector('.winners-carousel');
 
+    winnersCarousel.addEventListener('animationiteration', () => {
+        const firstPanel = winnersCarousel.querySelector('.winner-panel');
+        winnersCarousel.appendChild(firstPanel);
+    });
+</script>
     
     
 </body>
