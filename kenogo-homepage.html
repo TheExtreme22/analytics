@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v2.4</title>
+<title>Carousel with Panels v2.5</title>
 <style>
     .carousel {
         width: calc(100% - 50px); /* Subtracting 50px for the gap */
@@ -79,9 +79,11 @@
 
     /* Panel with game buttons */
     .game-panel {
-        width: calc(100% - 50px); /* Subtracting 50px for the gap */
-        margin-bottom: 20px;
+        width: 200px;
+        border: 1px solid #ccc;
+        padding: 20px;
         text-align: center;
+        margin-bottom: 20px;
     }
     .game-button {
         padding: 10px 20px;
@@ -91,7 +93,7 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 10px;
+        margin-top: 10px;
     }
 </style>
 </head>
@@ -136,14 +138,14 @@
     <!-- Add more winner panels as needed -->
 </div>
 
-<div class="tab-panel">
-    <div id="tab1" class="tab" onclick="changeTab(1)">Tab 1</div>
-    <div id="tab2" class="tab" onclick="changeTab(2)">Tab 2</div>
-    <div id="tab3" class="tab" onclick="changeTab(3)">Tab 3</div>
+<div class="tab-panel panel">
+    <div class="tab" onclick="changeTab(1)">Tab 1</div>
+    <div class="tab" onclick="changeTab(2)">Tab 2</div>
+    <div class="tab" onclick="changeTab(3)">Tab 3</div>
     <div id="tabContent" class="tab-content"></div>
 </div>
 
-<div class="game-panel panel">
+<div class="game-panel">
     <button class="game-button" onclick="changeGame(10)">10</button>
     <button class="game-button" onclick="changeGame(9)">9</button>
     <button class="game-button" onclick="changeGame(8)">8</button>
@@ -186,7 +188,18 @@
     // JavaScript to handle game button clicks
     function changeGame(gameNumber) {
         const gamePanel = document.querySelector('.game-panel');
-        gamePanel.textContent = `GAME ${gameNumber}`;
+        gamePanel.textContent = '';
+        const gameButtons = document.createElement('div');
+        gameButtons.classList.add('panel');
+        for (let i = 10; i >= gameNumber; i--) {
+            const button = document.createElement('button');
+            button.classList.add('game-button');
+            button.textContent = i;
+            button.onclick = () => changeGame(i);
+            gameButtons.appendChild(button);
+        }
+        gamePanel.appendChild(gameButtons);
+        gamePanel.appendChild(document.createTextNode(`GAME ${gameNumber}`));
     }
 </script>
 
