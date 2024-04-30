@@ -11,7 +11,7 @@ function nextStep(step) {
         'Category': 'Step ' + currentStep,
         'Display Type': 'impression',
     };
-    event_properties['Feature'] = Feature; // Using the registrationFeature variable
+    event_properties['Feature'] = Feature; 
     amplitude.track('display', event_properties);
 }
 
@@ -22,11 +22,11 @@ function prevStep(step) {
     updateProgressBar(currentStep);
     //TRACKING
     var event_properties = {
-        'Feature': 'registration',
         'Id': 'register',
         'Category': 'Step ' + currentStep,
         'Display Type': 'impression',
     };
+    event_properties['Feature'] = Feature;
     amplitude.track('display', event_properties);
 }
 
@@ -35,9 +35,6 @@ function updateProgressBar(step) {
     const fillPercentage = Math.min((step - 1) / 3 * 100, 100);
     progressBarInner.style.width = `${fillPercentage}%`;
 }
-
-
-
 
 function submitForm() {
     // You can add form submission logic here.
@@ -49,9 +46,7 @@ function submitForm() {
 
     // Construct event properties object
     var event_properties = {
-        Feature: 'registration',
         Name: 'outcome',
-
     };
 
     // Generate a random number between 0 and 99
@@ -69,6 +64,7 @@ function submitForm() {
         event_properties.Status = 'verified';
         alert('Registration Success');
     }
+    event_properties['Feature'] = Feature;
     amplitude.track('outcome', event_properties);
 
     // Redirect to the confirmation page after submission.
@@ -111,7 +107,6 @@ function trackOnFieldFocus(event) {
 
         // Construct event properties object
         var event_properties = {
-            Feature: 'registration',
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
@@ -120,8 +115,8 @@ function trackOnFieldFocus(event) {
         };
 
         // Fire amplitude tracking with 'focus' event type
+        event_properties['Feature'] = Feature;
         amplitude.track('click', event_properties);
-        console.log('Tracking event fired:', event_properties);
     }
 }
 
@@ -145,7 +140,6 @@ function trackLinkClick(event) {
 
         // Construct event properties object
         var event_properties = {
-            Feature: 'registration',
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
@@ -153,8 +147,8 @@ function trackLinkClick(event) {
         };
 
         // Fire amplitude tracking with 'click' event type
+        event_properties['Feature'] = Feature;
         amplitude.track('click', event_properties);
-        console.log('Link click event fired:', event_properties);
     }
 }
 
@@ -176,7 +170,6 @@ function trackButtonClick(event) {
 
         // Construct event properties object
         var event_properties = {
-            Feature: 'registration',
             Name: trackName,
             Container: trackContainer,
             Object: trackObject,
@@ -184,8 +177,8 @@ function trackButtonClick(event) {
         };
 
         // Fire amplitude tracking with 'click' event type
+        event_properties['Feature'] = Feature;
         amplitude.track('click', event_properties);
-        console.log('Button click event fired:', event_properties);
     }
 }
 
