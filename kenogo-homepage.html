@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with Panels v1.4</title>
+<title>Carousel with Panels 1.5</title>
 <style>
     .carousel {
-        width: 100%;
+        width: calc(100% - 50px); /* Subtracting 50px for the gap */
         overflow-x: auto;
         white-space: nowrap;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
     }
     .panel {
-        width: 600px;
-        height: 600px;
+        width: 200px;
+        height: 200px;
         display: inline-block;
         scroll-snap-align: start;
         background-color: #f0f0f0;
         border: 1px solid #ccc;
         text-align: center;
-        position: relative; /* Ensure buttons are positioned relative to panels */
+        position: relative;
     }
     .button {
         padding: 10px 20px;
@@ -41,27 +42,25 @@
         object-fit: cover;
     }
 
-     /* Additional carousel for winners */
+    /* Additional carousel for winners */
     .winners-carousel {
-        width: 100%;
-        overflow-x: auto;
+        width: calc(100% - 50px); /* Subtracting 50px for the gap */
+        overflow: hidden;
         white-space: nowrap;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
     }
     .winner-panel {
-        width: 400px;
-        height: 50px;
+        width: 200px;
+        height: 30px;
         display: inline-block;
-        scroll-snap-align: start;
         background-color: #f0f0f0;
         border: 1px solid #ccc;
         text-align: center;
-        margin-right: 10px; /* Add some space between winner panels */
+        margin-right: 10px;
     }
 
-    /* Animation for scrolling */
-    @keyframes scroll {
+    /* Animation for winners carousel */
+    @keyframes scrollWinners {
         0% {
             transform: translateX(0);
         }
@@ -70,13 +69,8 @@
         }
     }
     .winners-carousel {
-        animation: scroll 10s linear infinite;
+        animation: scrollWinners 10s linear infinite;
     }
-    .winners-carousel {
-        animation: scroll 10s linear infinite;
-    }
-    
-    
 </style>
 </head>
 <body>
@@ -115,6 +109,7 @@
     <div class="winner-panel">Jackpot Winner 8 - $4500</div>
     <!-- Add more winner panels as needed -->
 </div>
+
 <script>
     // JavaScript to check if a winner panel has moved off-screen and move it to the right
     const winnersCarousel = document.querySelector('.winners-carousel');
@@ -124,7 +119,6 @@
         winnersCarousel.appendChild(firstPanel);
     });
 </script>
-    
-    
+
 </body>
 </html>
