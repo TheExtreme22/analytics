@@ -92,50 +92,52 @@ amplitude.track('display',event_properties);
 </body>
 <script src="script.js"></script>  
 
-    <script>
-// Define the trackOnFirstClick function
-function trackOnFirstClick(formSelector) {
-    // Select the form element
-    var formElement = document.querySelector(formSelector);
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Define the trackOnFirstClick function
+    function trackOnFirstClick(formSelector) {
+        // Select the form element
+        var formElement = document.querySelector(formSelector);
 
-    // Function to handle first click event
-    function handleClick(event) {
-        var target = event.target;
-        // Check if the clicked element has a data-track attribute
-        if (target.hasAttribute('data-track')) {
-            // Extract attributes prefixed with "data-track"
-            var trackAttributes = {};
-            for (var i = 0; i < target.attributes.length; i++) {
-                var attribute = target.attributes[i];
-                if (attribute.name.startsWith('data-track')) {
-                    var key = attribute.name.replace('data-track-', '');
-                    trackAttributes[key.charAt(0).toLowerCase() + key.slice(1)] = attribute.value;
+        // Function to handle first click event
+        function handleClick(event) {
+            var target = event.target;
+            // Check if the clicked element has a data-track attribute
+            if (target.hasAttribute('data-track')) {
+                // Extract attributes prefixed with "data-track"
+                var trackAttributes = {};
+                for (var i = 0; i < target.attributes.length; i++) {
+                    var attribute = target.attributes[i];
+                    if (attribute.name.startsWith('data-track')) {
+                        var key = attribute.name.replace('data-track-', '');
+                        trackAttributes[key.charAt(0).toLowerCase() + key.slice(1)] = attribute.value;
+                    }
                 }
+
+                // Construct event properties object
+                var event_properties = {
+                    Feature: trackAttributes.feature || '',
+                    Name: trackAttributes.name || '',
+                    Container: trackAttributes.container || '',
+                    Object: trackAttributes.object || '',
+                    Category: trackAttributes.category || ''
+                };
+
+                // Fire amplitude tracking with 'click' event type
+                amplitude.track('click', event_properties);
+
+                // Remove the event listener after firing tracking for the first click
+                target.removeEventListener('click', handleClick);
             }
-
-            // Construct event properties object
-            var event_properties = {
-                Feature: trackAttributes.feature || '',
-                Name: trackAttributes.name || '',
-                Container: trackAttributes.container || '',
-                Object: trackAttributes.object || '',
-                Category: trackAttributes.category || ''
-            };
-
-            // Fire amplitude tracking with 'display' event type
-            amplitude.track('click', event_properties);
-
-            // Remove the event listener after firing tracking for the first click
-            target.removeEventListener('click', handleClick);
         }
+
+        // Attach event listener to the form to handle clicks
+        formElement.addEventListener('click', handleClick);
     }
 
-    // Attach event listener to the form to handle clicks
-    formElement.addEventListener('click', handleClick);
-}
-
-// Call the trackOnFirstClick function with the form selector
-trackOnFirstClick('form');
+    // Call the trackOnFirstClick function with the form selector
+    trackOnFirstClick('form');
+});
 </script>
     
 </html>
