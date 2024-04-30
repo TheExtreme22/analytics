@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form 23</title>
+    <title>Registration Form 24</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script type="text/javascript">
@@ -52,6 +52,30 @@
                 console.log('Tracking event fired:', event_properties);
             }
         }
+
+        // FUNCTION TO TRACK BUTTON CLICKS
+        function trackButtonClick(event) {
+            var target = event.target;
+            if (target.tagName === 'BUTTON' && target.hasAttribute('data-track-name')) {
+                var trackName = target.getAttribute('data-track-name');
+                var trackContainer = target.getAttribute('data-track-container') || '';
+                var trackObject = target.getAttribute('data-track-object') || '';
+                var trackCategory = target.getAttribute('data-track-category') || '';
+
+                // Construct event properties object
+                var event_properties = {
+                    Feature: 'registration',
+                    Name: trackName,
+                    Container: trackContainer,
+                    Object: trackObject,
+                    Category: trackCategory
+                };
+
+         // Attach click event listener to all buttons with data-track-name attribute
+        var buttons = document.querySelectorAll('button[data-track-name]');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', trackButtonClick);
+        });
 
         // Attach focus event listener to all form fields with data-track attribute
         document.addEventListener('focusin', function(event) {
