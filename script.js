@@ -1,4 +1,4 @@
-let currentStep = 1;
+tureeeeeeelet currentStep = 1;
 
 function nextStep(step) {
     document.getElementById(`step-${step}`).classList.remove('active');
@@ -170,7 +170,7 @@ function trackButtonClick(event) {
 
 
 // Function to set up tracking listeners for buttons, links, and form fields
-function setupListeners() {
+function setupListeners(Feature) {
     // Attach click event listener to all links with data-track-name attribute
     var links = document.querySelectorAll('a[data-track-name]');
     links.forEach(function(link) {
