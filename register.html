@@ -21,14 +21,17 @@ defaultTracking: {
 });
 
 //pageLoad     
+
+const event_properties= {
+    Feature: feature,
+    Id: 'register',
+    Category: 'Step 2', 
+    DisplayType: 'pageLoad',
+},
+     
 const event = {
     event_type:'display',
-    {
-        Feature: feature,
-        Id: 'register',
-        Category: 'Step 2', 
-        DisplayType: 'pageLoad',
-    },
+    event_properties,
 };
 amplitude.track(event);
 </script>   
