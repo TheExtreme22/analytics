@@ -28,12 +28,39 @@ function submitForm() {
     // This is just a placeholder.
     // Simulate a successful form submission for demonstration purposes.
     // alert('Form submitted successfully!');
+
+
     
-sleep(20000);
+    // Construct event properties object
+ var event_properties = {
+    Feature: 'registration',
+    Name: 'outcome',
+   
+};
+
+// Generate a random number between 0 and 99
+var randomNumber = Math.floor(Math.random() * 100);
+
+    // Assuming a 20% failure rate
+    if (randomNumber < 20) {
+        // Track failure
+        event_properties.Outcome = 'failure';
+        event_properties.error='Duplicate_Account';
+        alert('Registration Failure');
+    } else {
+        // Track success
+        event_properties.Outcome = 'success';
+        event_properties.Status: 'verified';
+        alert('Registration Success');
+    }
+
+    
+    amplitude.track('click', event_properties);
+
     // Redirect to the confirmation page after submission.
-     var queryString = window.location.search;
-    var destinationPageURL = "confirmation.html" + queryString;
-    window.location.href = destinationPageURL;
+     // var queryString = window.location.search;
+    //var destinationPageURL = "confirmation.html" + queryString;
+    //window.location.href = destinationPageURL;
 }
 
 function redirectToRegistration() {
