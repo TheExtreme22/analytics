@@ -13,11 +13,14 @@
         -webkit-overflow-scrolling: touch;
     }
     .panel {
-        width: 100vw;
-        height: 100vh;
+        width: 80vw; /* Adjust width to create space for the image */
+        height: 60vh; /* Adjust height as needed */
         display: inline-block;
         scroll-snap-align: start;
         background-color: #f0f0f0;
+        border: 1px solid #ccc; /* Add border for outline */
+        padding: 20px; /* Add padding for space */
+        box-sizing: border-box; /* Ensure padding is included in width */
     }
     .button-container {
         position: absolute;
@@ -34,32 +37,41 @@
         border-radius: 5px;
         cursor: pointer;
     }
+    .image {
+        width: 100%;
+        height: auto;
+    }
 </style>
 </head>
 <body>
 
 <div class="carousel">
     <div class="panel">
+        <img class="image" src="image1.jpg" alt="Image 1">
         <div class="button-container">
             <button class="button" onclick="alert('Button 1 clicked')">Button 1</button>
         </div>
     </div>
     <div class="panel">
+        <img class="image" src="image2.jpg" alt="Image 2">
         <div class="button-container">
             <button class="button" onclick="alert('Button 2 clicked')">Button 2</button>
         </div>
     </div>
     <div class="panel">
+        <img class="image" src="image3.jpg" alt="Image 3">
         <div class="button-container">
             <button class="button" onclick="alert('Button 3 clicked')">Button 3</button>
         </div>
     </div>
     <div class="panel">
+        <img class="image" src="image4.jpg" alt="Image 4">
         <div class="button-container">
             <button class="button" onclick="alert('Button 4 clicked')">Button 4</button>
         </div>
     </div>
     <div class="panel">
+        <img class="image" src="image5.jpg" alt="Image 5">
         <div class="button-container">
             <button class="button" onclick="alert('Button 5 clicked')">Button 5</button>
         </div>
