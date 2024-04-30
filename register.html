@@ -91,10 +91,10 @@ amplitude.track('display',event_properties);
   
 </body>
 <script src="script.js"></script>  
-<script>
-    
 
-     function trackOnFirstClick(formSelector) {
+    <script>
+// Define the trackOnFirstClick function
+function trackOnFirstClick(formSelector) {
     // Select the form element
     var formElement = document.querySelector(formSelector);
 
@@ -122,7 +122,7 @@ amplitude.track('display',event_properties);
                 Category: trackAttributes.category || ''
             };
 
-            // Fire amplitude tracking
+            // Fire amplitude tracking with 'display' event type
             amplitude.track('click', event_properties);
 
             // Remove the event listener after firing tracking for the first click
@@ -134,7 +134,7 @@ amplitude.track('display',event_properties);
     formElement.addEventListener('click', handleClick);
 }
 
-// Call the function with the form selector
+// Call the trackOnFirstClick function with the form selector
 trackOnFirstClick('form');
 </script>
     
