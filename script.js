@@ -167,6 +167,8 @@ function trackButtonClick(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
+        var trackCampaign = target.getAttribute('data-track-campaign') || '';
+    
 
         // Construct event properties object
         var event_properties = {
