@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KenoGo Homepage v4.1</title>
+<title>KenoGo Homepage v4.2</title>
 <style>
 
     body {
@@ -154,6 +154,11 @@ function getUrlParameter(name) {
         
 // PAGE DISPLAY TRACKING *****
 var Feature = 'homepage';
+var utmCampaign = getUrlParameter('utm_campaign');
+var utmSource = getUrlParameter('utm_source');
+var utmMedium = getUrlParameter('utm_medium');
+var Promo = getUrlParameter('promo');  
+var Affiliate = getUrlParameter('affiliate_id');
 var event_properties = {
     'Feature': Feature,
     'Id': 'homepage',
