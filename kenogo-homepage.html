@@ -184,7 +184,7 @@ amplitude.track('display', event_properties);
     </div>
        <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 5">
-        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-campaign="Offer 1" data-track-genre="lottery" data-track-product="jackpot" >Promo</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-offer="Offer 1" data-track-genre="lottery" data-track-product="jackpot" >Promo</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 1">
@@ -266,6 +266,7 @@ amplitude.track('display', event_properties);
             default:
                 imageSrc = '';
                 buttonText = '';
+                buttonProduct='jackpot';
                
         }
         tabContent.innerHTML = `
