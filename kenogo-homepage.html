@@ -252,16 +252,19 @@ amplitude.track('display', event_properties);
                 imageSrc = 'keno-jackpot.png';
                 buttonText = 'Play Jackpot';
                 buttonAction = () => alert('Button for Tab 1 clicked');
+                 buttonProduct='jackpot';
                 break;
             case 2:
                 imageSrc = 'keno-classic.png';
                 buttonText = 'Play Classic';
                 buttonAction = () => alert('Button for Tab 2 clicked');
+                 buttonProduct='classic';
                 break;
             case 3:
                 imageSrc = 'keno-headsortails.png';
                 buttonText = 'Play Heads or Tails';
                 buttonAction = () => alert('Button for Tab 3 clicked');
+                buttonProduct='headsOrTails';
                 break;
             default:
                 imageSrc = '';
@@ -270,7 +273,7 @@ amplitude.track('display', event_properties);
         }
         tabContent.innerHTML = `
             <img class="image" src="${imageSrc}" alt="Tab Image">
-            <button class="button" onclick="${buttonAction}">${buttonText}</button>
+            <button class="button" onclick="${buttonAction}" data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="${buttonProduct}"  >${buttonText}</button>
         `;
     }
 
