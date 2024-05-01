@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KenoGo Homepage v4.0</title>
+<title>KenoGo Homepage v4.1</title>
 <style>
 
     body {
@@ -134,6 +134,28 @@
         margin-bottom: 10px;
     }
 </style>
+
+<script type="text/javascript">
+// INITIALISE TRACKING *****        
+!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-BHj/6N+ZSiRDYRUHPEqr/nwkUsSk3s9r1ryQeFBc4x2OiVz4peW3jSccKZsoU8Ry",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-beta.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+amplitude.init('535a35b01503cd1dc00df9f74f844368', {
+    defaultTracking: {
+        pageViews: false,
+    },
+});
+        
+// PAGE DISPLAY TRACKING *****
+var Feature = 'homepage';
+var event_properties = {
+    'Feature': Feature,
+    'Id': 'homepage',
+    'Category': '',
+    'Display Type': 'pageLoad',
+};
+amplitude.track('display', event_properties);
+
+</script>    
+    
 </head>
 <body>
     <!-- LOGO -->    
@@ -145,11 +167,11 @@
 
       <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 1">
-        <button class="button" onclick="alert('Login')" data-track-container="carousel" data-track-object="button" data-track-name="game" >Game</button>
+        <button class="button" onclick="alert('Login')" data-track-container="carousel" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-name="jackpot" >Game</button>
     </div>
        <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 5">
-        <button class="button" onclick="alert('Promotion')" data-track-container="carousel" data-track-object="button" data-track-name="promotion" >Promo</button>
+        <button class="button" onclick="alert('Promotion')" data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-campaign="Offer 1" data-track-genre="lottery" data-track-name="jackpot" >Promo</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 1">
@@ -165,15 +187,15 @@
     </div>
     <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 4">
-        <button class="button" onclick="alert('Blog')" data-track-container="carousel" data-track-object="button" data-track-name="blog" >Blog</button>
+        <button class="button" onclick="alert('Blog')" data-track-container="carousel" data-track-object="button" data-track-name="blog" data-track-value="Victorian nearly scores $10 MILLION win!" data-track-category="information" >Blog</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 5">
-        <button class="button" onclick="alert('FAQs')" data-track-container="carousel" data-track-object="button" data-track-name="faqs" >FAQs</button>
+        <button class="button" onclick="alert('FAQs')" data-track-container="carousel" data-track-object="button" data-track-name="faqs"  data-track-value="What are hot and cold numbers?" data-track-category="information" >FAQs</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 4">
-        <button class="button" onclick="alert('Blog')" data-track-container="carousel" data-track-object="button" data-track-name="external" >External</button>
+        <button class="button" onclick="alert('Blog')" data-track-container="carousel" data-track-object="button" data-track-name="external" data-track-value="Apple App Store"  data-track-category="information" >External</button>
     </div>
 </div>
 
@@ -190,20 +212,20 @@
 </div>
 
 <div class="tab-panel panel">
-    <button class="tab-button" onclick="changeTab(1)">Jackpot</button>
-    <button class="tab-button" onclick="changeTab(2)">Classic</button>
-    <button class="tab-button" onclick="changeTab(3)">Heads or Tails</button>
+    <button class="tab-button" onclick="changeTab(1)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="jackpot" >Jackpot</button>
+    <button class="tab-button" onclick="changeTab(2)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="classic" >Classic</button>
+    <button class="tab-button" onclick="changeTab(3)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="headsOrTails" >Heads or Tails</button>
     <div id="tabContent" class="tab-content"></div>
 </div>
 
 <div class="game-panel panel" id="gamePanel">
     <div class="game-text" id="gameText">Game 50</div>
     <div id="gameButtons">
-        <button class="game-button" onclick="changeGame(50)">50</button>
-        <button class="game-button" onclick="changeGame(49)">49</button>
-        <button class="game-button" onclick="changeGame(48)">48</button>
-        <button class="game-button" onclick="changeGame(47)">47</button>
-        <button class="game-button" onclick="changeGame(46)">46</button>
+        <button class="game-button" onclick="changeGame(50)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="50" >50</button>
+        <button class="game-button" onclick="changeGame(49)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="49" >49</button>
+        <button class="game-button" onclick="changeGame(48)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="48" >48</button>
+        <button class="game-button" onclick="changeGame(47)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="47" >47</button>
+        <button class="game-button" onclick="changeGame(46)" data-track-container="results" data-track-object="link" data-track-name="game" data-track-value="46" >46</button>
     </div>
 </div>
 
@@ -249,6 +271,6 @@
     // Show default tab and game panel
     changeTab(1);
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>
