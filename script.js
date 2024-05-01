@@ -169,8 +169,12 @@ function trackButtonClick(event) {
         var trackContainer = target.getAttribute('data-track-container') || '';
         var trackObject = target.getAttribute('data-track-object') || '';
         var trackCategory = target.getAttribute('data-track-category') || '';
-      
-    
+        var trackValue = target.getAttribute('data-track-value') || '';
+        var trackCampaign = target.getAttribute('data-track-campaign') || '';
+        var trackOffer = target.getAttribute('data-track-offer') || '';
+        var trackGenre = target.getAttribute('data-track-genre') || '';
+        var trackProduct = target.getAttribute('data-track-product') || '';
+
 
         // Construct event properties object
         var event_properties = {
@@ -178,7 +182,11 @@ function trackButtonClick(event) {
             Container: trackContainer,
             Object: trackObject,
             Category: trackCategory,
-           
+            Value: trackValue,
+            Campaign: trackCampaign,
+            Offer: trackOffer,
+            Genre: trackGenre,
+            Product: trackProduct,
         };
 
         // Fire amplitude tracking with 'click' event type
