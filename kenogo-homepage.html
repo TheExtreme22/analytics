@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KenoGo Homepage v4.3</title>
+<title>KenoGo Homepage v4.4</title>
 <style>
 
     body {
@@ -180,35 +180,35 @@ amplitude.track('display', event_properties);
 
       <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 1">
-        <button class="button" onclick="alert('Game')" data-track-container="carousel" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="classic" >Game</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="classic" >Game</button>
     </div>
        <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 5">
-        <button class="button" onclick="alert('Promotion')" data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-campaign="Offer 1" data-track-genre="lottery" data-track-product="jackpot" >Promo</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="promotion" data-track-campaign="Home Page" data-track-campaign="Offer 1" data-track-genre="lottery" data-track-product="jackpot" >Promo</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 1">
-        <button class="button" onclick="alert('Login')" data-track-container="carousel" data-track-object="button" data-track-name="login" >Log in</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="login" >Log in</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 2">
-        <button class="button" onclick="alert('Register')" data-track-container="carousel" data-track-object="button" data-track-name="register" >Register</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="register" >Register</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 3">
-        <button class="button" onclick="alert('Deposit')" data-track-container="carousel" data-track-object="button" data-track-name="deposit" >Deposit</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="deposit" >Deposit</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 4">
-        <button class="button" onclick="alert('Blog')" data-track-container="carousel" data-track-object="button" data-track-name="blog" data-track-value="Victorian nearly scores $10 MILLION win!" data-track-category="information" >Blog</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="blog" data-track-value="Victorian nearly scores $10 MILLION win!" data-track-category="information" >Blog</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="balls.png" alt="Image 5">
-        <button class="button" onclick="alert('FAQs')" data-track-container="carousel" data-track-object="button" data-track-name="faqs"  data-track-value="What are hot and cold numbers?" data-track-category="information" >FAQs</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="faqs"  data-track-value="What are hot and cold numbers?" data-track-category="information" >FAQs</button>
     </div>
     <div class="panel">
         <img class="panel-image" src="ballsblue.png" alt="Image 4">
-        <button class="button" onclick="alert('External')" data-track-container="carousel" data-track-object="button" data-track-name="external" data-track-value="Apple App Store"  data-track-category="information" >External</button>
+        <button class="button"  data-track-container="carousel" data-track-object="button" data-track-name="external" data-track-value="Apple App Store"  data-track-category="information" >External</button>
     </div>
 </div>
 
@@ -251,29 +251,26 @@ amplitude.track('display', event_properties);
             case 1:
                 imageSrc = 'keno-jackpot.png';
                 buttonText = 'Play Jackpot';
-                buttonAction = () => alert('Button for Tab 1 clicked');
                  buttonProduct='jackpot';
                 break;
             case 2:
                 imageSrc = 'keno-classic.png';
                 buttonText = 'Play Classic';
-                buttonAction = () => alert('Button for Tab 2 clicked');
                  buttonProduct='classic';
                 break;
             case 3:
                 imageSrc = 'keno-headsortails.png';
                 buttonText = 'Play Heads or Tails';
-                buttonAction = () => alert('Button for Tab 3 clicked');
                 buttonProduct='headsOrTails';
                 break;
             default:
                 imageSrc = '';
                 buttonText = '';
-                buttonAction = () => {};
+               
         }
         tabContent.innerHTML = `
             <img class="image" src="${imageSrc}" alt="Tab Image">
-            <button class="button" onclick="${buttonAction}" data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="${buttonProduct}"  >${buttonText}</button>
+            <button class="button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="${buttonProduct}"  >${buttonText}</button>
         `;
     }
 
