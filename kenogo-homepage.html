@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KenoGo Homepage v4.5</title>
+<title>KenoGo Homepage v4.6</title>
 <style>
 
     body {
@@ -229,6 +229,9 @@ amplitude.track('display', event_properties);
     <button class="tab-button" onclick="changeTab(2)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="classic" >Classic</button>
     <button class="tab-button" onclick="changeTab(3)" data-track-container="play" data-track-object="tab" data-track-name="navigate" data-track-genre="lottery" data-track-product="headsOrTails" >Heads or Tails</button>
     <div id="tabContent" class="tab-content"></div>
+    <button class="button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="jackpot"  >Play Jackpot</button>
+    <button class="button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="classic"  >Play Classic}</button>
+    <button class="button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="headsOrTails"  >Play Heads or Tails</button>
 </div>
 
 <div class="game-panel panel" id="gamePanel">
@@ -250,28 +253,20 @@ amplitude.track('display', event_properties);
         switch (tabNumber) {
             case 1:
                 imageSrc = 'keno-jackpot.png';
-                buttonText = 'Play Jackpot';
-                 buttonProduct='jackpot';
                 break;
             case 2:
                 imageSrc = 'keno-classic.png';
-                buttonText = 'Play Classic';
-                 buttonProduct='classic';
                 break;
             case 3:
                 imageSrc = 'keno-headsortails.png';
-                buttonText = 'Play Heads or Tails';
-                buttonProduct='headsOrTails';
                 break;
             default:
                 imageSrc = '';
-                buttonText = '';
-                buttonProduct='jackpot';
                
         }
         tabContent.innerHTML = `
             <img class="image" src="${imageSrc}" alt="Tab Image">
-            <button class="button"  data-track-container="play" data-track-object="button" data-track-name="play" data-track-genre="lottery" data-track-product="${buttonProduct}"  >${buttonText}</button>
+            
         `;
     }
 
