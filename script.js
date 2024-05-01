@@ -193,7 +193,7 @@ function trackButtonClick(event) {
         event_properties['Feature'] = Feature;
       
         if (!event_properties['Campaign']) {event_properties['Campaign'] = utmCampaign;}
-        if(!event_properties['Offer']) {event_properties['Offer'] = promo;}        
+        if(!event_properties['Offer']) {event_properties['Offer'] = Promo;}        
         event_properties['Source'] = utmSource;
         event_properties['Medium'] = utmMedium;
         event_properties['Partner'] = Affiliate;
